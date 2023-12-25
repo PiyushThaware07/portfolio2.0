@@ -22,14 +22,14 @@ export default function Projects() {
             <p className='text-sm '>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quasi, voluptatibus.</p>
           </div>
         </div>
-        <div className="col  bg-white text-black rounded-lg">
+        <div className="col  border-2 border-[#36fffc] rounded-lg">
           <div className="thumbnail h-[150px] w-full rounded-t-lg"
             style={{
               backgroundImage: "url('https://wallpapers.com/images/high/bright-youtube-background-tghdwhgg9rq9a0cb.webp')"
               , backgroundRepeat: "no-repeat", backgroundPosition: "center", backgroundSize: "cover"
             }}></div>
           <div className="content p-3">
-            <h1 className='text-md font-bold text-black'>FreeTube</h1>
+            <h1 className='text-md font-bold text-[#36fffc]'>FreeTube</h1>
             <p className='text-sm '>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quasi, voluptatibus.</p>
           </div>
         </div>
