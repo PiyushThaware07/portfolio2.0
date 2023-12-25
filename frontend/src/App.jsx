@@ -11,7 +11,7 @@ export default function App() {
     <div className='bg-[#272626] '>
       <Navbar/>
       <Header/>
-      {/* <Skills/> */}
+      <Skills/>
       <Projects/>
     </div>
   )
