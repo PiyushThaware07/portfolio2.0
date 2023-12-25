@@ -1,15 +1,10 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 // IMPORT ICONS
-import { IoLogoJavascript } from "react-icons/io";
-import { FaReact } from "react-icons/fa";
-import { TbBrandPython } from "react-icons/tb";
-import { SiDjango } from "react-icons/si";
-import { FaBootstrap } from "react-icons/fa6";
-import { SiTailwindcss } from "react-icons/si";
 import { FaPlay } from "react-icons/fa";
 
-export default function Header() {
 
+export default function Header() {
+    
     return (
         <div className='header text-white p-10 max-w-[1600px]' style={{ fontFamily: "'Poppins', sans-serif" }}>
             <div className="content grid grid-cols-1 md:grid-cols-2  md:p-7">
@@ -27,19 +22,18 @@ export default function Header() {
                             <div className="circle-1 w-[10px] h-[10px] bg-[#ffffff2c] rounded-full"></div>
                             <div className="circle-2 w-[10px] h-[10px] bg-[#47fffc] rounded-full"></div>
                             <div className="circle-3 w-[10px] h-[10px] bg-[#ffffff2c] rounded-full"></div>
-                            <div className="circle-4 text-[#47fffc] rounded-full ms-auto text-sm flex flex-nowrap items-center gap-1">Run<FaPlay /></div>
+                            <div className="circle-4 text-[#47fffc] rounded-full ms-auto text-sm flex flex-nowrap items-center gap-1 cursor-pointer">Run<FaPlay /></div>
                         </div>
 
-                        {/* <pre>
-                            <code>
-                                &lt;div className="circle-1 w-[10px] h-[10px] bg-[#ffffff2c] rounded-full"&gt;&lt;/div&gt;
-                                &lt;div className="circle-2 w-[10px] h-[10px] bg-[#47fffc] rounded-full"&gt;&lt;/div&gt;
-                            </code>
-                        </pre> */}
-
+                        <div className="flex flex-nowrap items-center bg-[#ffffff15]">
+                            <div id='lineNumbers' className="line-number h-[360px] w-[10%] ps-3 text-[#ffffff2c]">1.</div>
+                            <textarea id="textArea" className='h-[360px] w-[90%] rounded-b-lg focus:outline-none bg-transparent'></textarea>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     )
 }
+
+
