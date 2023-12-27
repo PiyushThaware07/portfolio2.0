@@ -3,11 +3,17 @@ import "./App.css";
 // IMPORT COMPONENTS
 import Navbar from "./components/Navbar";
 import Header from "./components/Header";
-import Projects from './components/Projects';
 import Contact from "./components/Contact";
-import Skills from './components/Skills';
 
 export default function App() {
+  // COLOR TEMPLATE GLOBAL
+  const ColorTemplate = {
+    textWhite: "white",
+    textColor: "#47fffc",
+    bgColor: "#47fffc",
+    mainColor: "#000000e5"
+  }
+
 
   const [showContactModel, setShowContactModel] = useState(false);
   function toggleContactModel() {
@@ -21,14 +27,12 @@ export default function App() {
 
   return (
     // // bg-gray-950 
-    <div className='bg-[#272626] '>
-      <Navbar toggleContactModel={toggleContactModel} />
+    <div className={`bg-[${ColorTemplate.mainColor}]  `}>
+      <Navbar toggleContactModel={toggleContactModel} ColorTemplate={ColorTemplate} />
       <Header />
-      {/* <Projects/> */}
       {
         showContactModel ? <Contact toggleContactModel={toggleContactModel} /> : ''
       }
-      <Skills/>
     </div>
   )
 }
