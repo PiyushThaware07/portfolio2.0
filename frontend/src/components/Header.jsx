@@ -6,7 +6,7 @@ import { FaPlay } from "react-icons/fa";
 export default function Header() {
     
     return (
-        <div className='header text-white p-10 max-w-[1600px]' style={{ fontFamily: "'Poppins', sans-serif" }}>
+        <div className='header text-white p-10 max-w-[1600px] mx-auto' style={{ fontFamily: "'Poppins', sans-serif" }}>
             <div className="content grid grid-cols-1 md:grid-cols-2  md:p-7">
                 <div className="h-auto md:h-[300px] flex flex-col flex-nowrap items-center justify-center mb-8 md:mb-0">
                     <div className="">

@@ -8,7 +8,7 @@ import { LuPackageOpen } from "react-icons/lu";
 import { BiLogoGraphql } from "react-icons/bi";
 
 
-export default function Navbar() {
+export default function Navbar(props) {
     const [menu, setMenu] = useState(false);
     function toggleMenu() {
         setMenu(!menu)
@@ -27,11 +27,11 @@ export default function Navbar() {
                         {/* <li className='flex flex-nowrap items-center gap-1 uppercase text-sm'><LuPackageOpen/> About me</li> */}
                         <li><Link className='flex flex-nowrap items-center gap-1 uppercase text-sm hover:text-[#47fffc] transition-all font-medium p-5 md:p-0'><BiLogoGraphql /> Tech Stack</Link></li>
                         <li><Link className='flex flex-nowrap items-center gap-1 uppercase text-sm hover:text-[#47fffc] transition-all font-medium p-5 md:p-0'><LuPackageOpen /> Projects</Link></li>
-                        <li className='hidden md:flex flex-nowrap items-center justify-center gap-2 border-2 border-[#47fffc] ps-3 pe-1 py-1 rounded-full cursor-pointer'>
+                        <li className='hidden md:flex flex-nowrap items-center justify-center gap-2 border-2 border-[#47fffc] ps-3 pe-1 py-1 rounded-full cursor-pointer' onClick={() => props.toggleContactModel()}>
                             <h1>Contact</h1>
                             <div className="bg-[#47fffca9] p-2 rounded-full"><FaHeadphonesAlt /></div>
                         </li>
-                        <li><Link className='flex md:hidden flex-nowrap items-center gap-1 uppercase text-sm hover:text-[#47fffc] transition-all font-medium p-5 md:p-0'><FaHeadphonesAlt /> Contact me</Link></li>
+                        <li><Link className='flex md:hidden flex-nowrap items-center gap-1 uppercase text-sm hover:text-[#47fffc] transition-all font-medium p-5 md:p-0 cursor-pointer' onClick={() => props.toggleContactModel()}><FaHeadphonesAlt /> Contact me</Link></li>
                     </ul>
                 </div>
             </nav>
