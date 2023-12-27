@@ -27,7 +27,7 @@ export default function App() {
 
   return (
     // // bg-gray-950 
-    <div className="bg-['#000000e5']">
+    <div className="bg-[#000000e5]">
       <Navbar toggleContactModel={toggleContactModel} ColorTemplate={ColorTemplate} />
       <Header />
       {
