@@ -13,6 +13,12 @@ export default function Navbar(props) {
     function toggleMenu() {
         setMenu(!menu)
     }
+
+    function handleContactWithMenu() {
+        setMenu(false);
+        props.toggleContactModel();
+    }
+
     return (
         <div className='navbar  text-white p-4' style={{ fontFamily: "'Poppins', sans-serif" }}>
             <nav className='md:flex flex-nowrap items-center justify-between sm:px-6'>
@@ -31,7 +37,7 @@ export default function Navbar(props) {
                             <h1>Contact</h1>
                             <div className="bg-[#47fffca9] p-2 rounded-full"><FaHeadphonesAlt /></div>
                         </li>
-                        <li><Link className='flex md:hidden flex-nowrap items-center gap-1 uppercase text-sm hover:text-[#47fffc] transition-all font-medium p-5 md:p-0 cursor-pointer' onClick={() => props.toggleContactModel()}><FaHeadphonesAlt /> Contact me</Link></li>
+                        <li><Link className='flex md:hidden flex-nowrap items-center gap-1 uppercase text-sm hover:text-[#47fffc] transition-all font-medium p-5 md:p-0 cursor-pointer' onClick={handleContactWithMenu} ><FaHeadphonesAlt /> Contact me</Link></li>
                     </ul>
                 </div>
             </nav>

@@ -9,7 +9,7 @@ export default function Contact(props) {
         <>
             <div className='main-contact fixed top-0 bottom-0 left-0 right-0 bg-[#0f0f0fc8]' style={{ fontFamily: "'Poppins', sans-serif" }}></div>
             <div className="content fixed top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] ">
-                <div className="h-auto w-[500px] md:px-5">
+                <div className="h-auto w-[330px] sm:w-[500px] md:px-5">
                     <div className="h-full border-2 border-[#47fffc] bg-[#212121] rounded-lg shadow-md p-8">
                         <div className="flex flex-nowrap items-center justify-between">
                             <h1 className='text-lg text-white font-mono capitalize'>Get In <span className='text-[#47fffc]'>Touch</span> With Me</h1>
