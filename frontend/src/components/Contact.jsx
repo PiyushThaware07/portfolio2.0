@@ -13,7 +13,8 @@ export default function Contact(props) {
     async function handleSubmit(event) {
         event.preventDefault();
         console.log("Sending to Backend :", name, email, message);
-        const addToDB = await fetch('http://localhost:3001/contactInsert', {
+        // const addToDB = await fetch('http://localhost:3001/contactInsert', {
+        const addToDB = await fetch('https://piyushthaware-server.vercel.app/contactInsert', {   // online
             method: 'post',
             body: JSON.stringify({ name, email, message }),
             headers: {
