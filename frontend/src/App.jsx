@@ -26,7 +26,7 @@ export default function App() {
 
 
   // MESSAGE BOX HANDLING -----------------------------(getting data from child)
-  const [messageBox, setMessageBox] = useState(true);
+  const [messageBox, setMessageBox] = useState(false);
   // console.log("APP ", messageBox);
   useEffect(() => {
     setTimeout(() => {
