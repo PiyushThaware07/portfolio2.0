@@ -8,14 +8,10 @@ const contactModel = require("./mongo");
 // Connect Backend To Frontend ----------------
 const cors = require("cors");
 
-app.use(cors({
-    origin: ['*'],
-    methods: ['POST', 'GET'],
-    credentials: true
-}));
+app.use(cors());
 
 app.get('/', (request, response) => {
-    response.json("started");
+    response.send("started");
 })
 
 
@@ -32,7 +28,7 @@ app.post('/contactInsert', async (request, response) => {
 
 
 
-const port = 3001
+const port = 3000;
 app.listen(port, () => {
     console.log(`Server Started at port ${port}`);
 })
