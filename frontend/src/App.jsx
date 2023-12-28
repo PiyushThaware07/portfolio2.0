@@ -5,6 +5,7 @@ import Navbar from "./components/Navbar";
 import Header from "./components/Header";
 import Contact from "./components/Contact";
 import MessageBox from './components/MessageBox';
+import Projects from './components/Projects';
 
 export default function App() {
   // COLOR TEMPLATE GLOBAL
@@ -47,6 +48,7 @@ export default function App() {
       {
         messageBox ? <MessageBox setMessageBox={setMessageBox} /> : ''
       }
+      <Projects/>
     </div>
   )
 }

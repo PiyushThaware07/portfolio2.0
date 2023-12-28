@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+    <style>
+        * {
+            padding: 0px;
+            margin: 0px;
+            box-sizing: border-box;
+        }
+
+
+
+        .container {
+            min-height: 100vh;
+            display: flex;
+            flex-wrap: nowrap;
+            align-items: center;
+            justify-content: center;
+            padding: 30px;
+            overflow: hidden;
+
+        }
+
+        .slider-wrapper {
+            width: 100%;
+            position: relative;
+        }
+
+        .slider-list {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            gap: 20px;
+            width: 100%;
+            overflow-x: scroll;
+        }
+
+        .slider-list::-webkit-scrollbar {
+            display: none;
+        }
+
+        .slider-item {
+            height: 350px;
+            width: 300px;
+            object-fit: cover;
+            border-radius: 13px;
+            margin-left: 10px;
+            transition: all;
+        }
+
+        .slider-buttons {
+            height: 40px;
+            width: 40px;
+            border-radius: 50%;
+            color: white;
+            background-color: black;
+            border: 0px;
+            outline: none;
+            font-size: 24px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 999;
+            cursor: pointer;
+        }
+
+        #prevBtn {
+            left: -14px;
+        }
+
+        #nextBtn {
+            right: -14px;
+        }
+
+        /* .slider-list:first-child{
+            transform: translateX(-50%);
+        } */
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="slider-wrapper">
+            <button type="button" id="prevBtn" class="slider-buttons" onclick="handlePrev()"><i
+                    class='bx bx-chevron-left'></i></button>
+            <div class="slider-list" id="slider-list" style="position: relative;">
+                <img src="./images/1.jpg" alt="img-1" class="slider-item" id="1">
+                <img src="./images/2.jpg" alt="img-2" class="slider-item" id="2">
+                <img src="./images/3.jpg" alt="img-3" class="slider-item" id="3">
+                <img src="./images/4.jpg" alt="img-4" class="slider-item" id="4">
+                <img src="./images/5.jpg" alt="img-5" class="slider-item" id="5">
+                <img src="./images/6.jpg" alt="img-6" class="slider-item" id="6">
+                <img src="./images/7.jpg" alt="img-7" class="slider-item" id="7">
+            </div>
+            <button type="button" id="nextBtn" class="slider-buttons" onclick="handleNext()"><i
+                    class='bx bx-chevron-right'></i></button>
+        </div>
+    </div>
+</body>
+<script>
+    // style="margin-left: 8px;left: -320px !important;position: absolute;"
+
+    let currentIndex = 0;
+    const cardList = document.getElementById('slider-list');
+    const cards = document.querySelectorAll('.slider-item');
+    const cardWidth = cards[0].offsetWidth;
+    console.log(cardWidth);
+
+    let prevBtn = document.getElementById("prevBtn").style.display = "none";
+
+    function handleNext() {
+        console.warn("next", currentIndex);
+        if (currentIndex < cards.length - 2) {
+            console.log("enter");
+            cards[currentIndex].style.display = "none"
+            currentIndex++;
+            let prevBtn = document.getElementById("prevBtn").style.display = "block";
+            if (currentIndex == 5) {
+                let nextBtn = document.getElementById("nextBtn").style.display = "none";
+            }
+        }
+        console.log("Final Current Index : ", currentIndex);
+    }
+    function handlePrev() {
+        console.warn("prev", currentIndex);
+        if (currentIndex > 0) {
+            console.log("enter prev");
+            currentIndex--;
+            if (currentIndex < 5) {
+                let nextBtn = document.getElementById("nextBtn").style.display = "block";
+            }
+            if (currentIndex === 0) {
+                let prevBtn = document.getElementById("prevBtn").style.display = "none";
+            }
+            cards[currentIndex].style.display = "block"
+        }
+        console.log("Final Current Index : ", currentIndex);
+    }
+
+</script>
+
+</html>
