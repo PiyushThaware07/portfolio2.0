@@ -8,13 +8,17 @@ const contactModel = require("./mongo");
 // Connect Backend To Frontend ----------------
 const cors = require("cors");
 
-app.use(cors(
-    {
-        origin: [""],
-        methods: ["POST", "GET"],
-        credentials: true
-    }
-));
+app.use(cors({
+    origin: ['*'],
+    methods: ['POST', 'GET'],
+    credentials: true
+}));
+
+app.get('/', (request, response) => {
+    response.json("started");
+})
+
+
 app.use(express.json());
 app.post('/contactInsert', async (request, response) => {
     console.log("Data Received FrontEnd", request.body);
@@ -26,12 +30,9 @@ app.post('/contactInsert', async (request, response) => {
     response.send(JSON.stringify("data received"));
 })
 
-app.get('/', (request, response) => {
-    response.send("started");
-})
 
 
-const port = 1000
+const port = 3001
 app.listen(port, () => {
     console.log(`Server Started at port ${port}`);
 })
