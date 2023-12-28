@@ -4,6 +4,7 @@ import "./App.css";
 import Navbar from "./components/Navbar";
 import Header from "./components/Header";
 import Contact from "./components/Contact";
+import MessageBox from './components/MessageBox';
 
 export default function App() {
   // COLOR TEMPLATE GLOBAL
@@ -24,6 +25,15 @@ export default function App() {
   }, [showContactModel])
 
 
+  // MESSAGE BOX HANDLING -----------------------------(getting data from child)
+  const [messageBox, setMessageBox] = useState(true);
+  // console.log("APP ", messageBox);
+  useEffect(() => {
+    setTimeout(() => {
+      setMessageBox(false);
+    }, 5200);
+  })
+
 
   return (
     // // bg-gray-950 
@@ -31,7 +41,11 @@ export default function App() {
       <Navbar toggleContactModel={toggleContactModel} ColorTemplate={ColorTemplate} />
       <Header />
       {
-        showContactModel ? <Contact toggleContactModel={toggleContactModel} /> : ''
+        showContactModel ? <Contact toggleContactModel={toggleContactModel} setMessageBox={setMessageBox} /> : ''
+      }
+
+      {
+        messageBox ? <MessageBox setMessageBox={setMessageBox} /> : ''
       }
     </div>
   )
