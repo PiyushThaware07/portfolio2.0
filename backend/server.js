@@ -20,6 +20,10 @@ app.post('/contactInsert', async (request, response) => {
     response.send(JSON.stringify("data received"));
 })
 
+app.get('/',(request,response)=>{
+    response.send("started");
+})
+
 
 const port = 1000
 app.listen(port, () => {
