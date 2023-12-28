@@ -21,6 +21,9 @@ export default function Contact(props) {
         })
         let consoleResult = await addToDB.json();
         console.warn("Backend : ", consoleResult);
+        if (consoleResult) {
+            props.toggleContactModel();
+        }
     }
     return (
         <>
