@@ -9,9 +9,18 @@ export default function Contact(props) {
     const [email, setEmail] = useState('');
     const [message, setMessage] = useState('');
 
-    function handleSubmit(event) {
+    async function handleSubmit(event) {
         event.preventDefault();
-        console.log(name, email, message);
+        console.log("Sending to Backend :", name, email, message);
+        const addToDB = await fetch('http://localhost:1000/contactInsert', {
+            method: 'post',
+            body: JSON.stringify({ name, email, message }),
+            headers: {
+                "Content-Type": "application/json"
+            }
+        })
+        let consoleResult = await addToDB.json();
+        console.warn("Backend : ", consoleResult);
     }
     return (
         <>
