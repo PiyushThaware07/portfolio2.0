@@ -8,7 +8,13 @@ const contactModel = require("./mongo");
 // Connect Backend To Frontend ----------------
 const cors = require("cors");
 
-app.use(cors());
+app.use(cors(
+    {
+        origin: [""],
+        methods: ["POST", "GET"],
+        credentials: true
+    }
+));
 app.use(express.json());
 app.post('/contactInsert', async (request, response) => {
     console.log("Data Received FrontEnd", request.body);
@@ -20,7 +26,7 @@ app.post('/contactInsert', async (request, response) => {
     response.send(JSON.stringify("data received"));
 })
 
-app.get('/',(request,response)=>{
+app.get('/', (request, response) => {
     response.send("started");
 })
 
