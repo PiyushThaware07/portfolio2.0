@@ -8,11 +8,22 @@ const contactModel = require("./mongo");
 // Connect Backend To Frontend ----------------
 const cors = require("cors");
 
+
 app.use(cors());
 
 
 app.get('/', (request, response) => {
     response.send("started");
+})
+
+
+// Set EJS as templating engine 
+const path = require("path");
+app.set('view engine', 'ejs');
+app.set('views', path.join(__dirname, 'views'));
+// app.use(express.static(path.join(__dirname, 'public')))
+app.get('/login', (request, response) => {
+    response.render("Login", {})
 })
 
 
