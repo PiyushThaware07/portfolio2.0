@@ -28,18 +28,6 @@ app.post('/contactInsert', async (request, response) => {
 })
 
 
-// Setting Dashboard Access
-const path = require('path');
-app.set('views', path.join(__dirname, 'views'));
-app.use(express.static(path.join(__dirname, 'public')))
-console.log("VIEWS PATH -------->> ", path.join(__dirname, 'views'));
-console.log("PUBLIC PATH -------->> ", path.join(__dirname, 'public'));
-app.set('view engine', 'ejs');
-app.get('/login', (request, response) => {
-    response.render('Login')
-})
-
-
 const port = 3000;
 app.listen(port, () => {
     console.log(`Server Started at port ${port}`);
