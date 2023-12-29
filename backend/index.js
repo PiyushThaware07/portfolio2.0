@@ -10,6 +10,7 @@ const cors = require("cors");
 
 app.use(cors());
 
+
 app.get('/', (request, response) => {
     response.send("started");
 })
@@ -26,6 +27,17 @@ app.post('/contactInsert', async (request, response) => {
     response.send(JSON.stringify("data received"));
 })
 
+
+// Setting Dashboard Access
+const path = require('path');
+app.set('views', path.join(__dirname, 'views'));
+app.use(express.static(path.join(__dirname, 'public')))
+console.log("VIEWS PATH -------->> ", path.join(__dirname, 'views'));
+console.log("PUBLIC PATH -------->> ", path.join(__dirname, 'public'));
+app.set('view engine', 'ejs');
+app.get('/login', (request, response) => {
+    response.render('Login')
+})
 
 
 const port = 3000;
