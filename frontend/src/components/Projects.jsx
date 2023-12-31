@@ -4,6 +4,7 @@ import { TbExternalLink } from "react-icons/tb";
 import { FaAngleLeft } from "react-icons/fa";
 import { FaAngleRight } from "react-icons/fa";
 
+
 export default function Projects() {
     let [currentIndex, setCurrentIndex] = useState(0);
     const [cardSlider, setCardSlider] = useState(null); // Initialize with null
@@ -104,8 +105,13 @@ export default function Projects() {
                                 <TbExternalLink className='text-xl' />
                             </button>
                         </div>
+                        <div className="card  rounded-lg relative border-2 border-[#e1dede4c] hover:border-[#47fffc]  text-[#e1dede4c] hover:text-[#47fffc]" style={{ flex: "0 0 auto", width: "290px" }}>
+                            <div className="thumbnail h-[160px] sm:h-[180px] rounded-t-lg bg-[#2c2c2ce0] relative" style={{ backgroundRepeat: "no-repeat", backgroundPosition: "center", backgroundSize: "cover" }}>
+                                <h1 className='text-lg  tracking-[1.2px] font-[400] absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] flex flex-nowrap items-center justify-center gap-2'>More Projects <TbExternalLink /></h1>
+                            </div>
+                        </div>
                     </div>
-                    <button type='button' id='nextBtn' onClick={handleNext} className={`${currentIndex == cards.length - 1 ? "hidden" : ""} h-[40px] w-[40px]  bg-white text-black flex flex-nowrap items-center justify-center rounded-full text-lg absolute top-[50%] right-[-40px] translate-x-[-50%] translate-y-[-50%] z-[999]`}>
+                    <button type='button' id='nextBtn' onClick={handleNext} className={` ${currentIndex == cards.length - 1 ? "hidden" : ""}  md:${currentIndex == cards.length - 2 ? "hidden" : ""}  h-[40px] w-[40px]  bg-white text-black flex flex-nowrap items-center justify-center rounded-full text-lg absolute top-[50%] right-[-40px] translate-x-[-50%] translate-y-[-50%] z-[999]`}>
                         <FaAngleRight />
                     </button>
 
