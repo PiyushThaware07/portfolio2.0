@@ -22,22 +22,18 @@ export default function About() {
                     <h1 className='text-5xl font-semibold' data-aos="fade-up">About<span className='text-[#47fffc]'> Me</span></h1>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 mt-8">
+                <div className="grid grid-cols-1 md:grid-cols-2 mt-8 items-center bg-[#00000081]">
                     <div className="col h-[300px] md:h-[400px] relative hidden sm:block bg-cover md:bg-contain"
-                        style={{ backgroundImage: `url('${bg1}')`, backgroundRepeat: "no-repeat", backgroundPosition: "center"}}>
+                        style={{ backgroundImage: `url('${bg1}')`, backgroundRepeat: "no-repeat", backgroundPosition: "center" }}>
                         <div className="hidden sub-image h-[200px] w-[200px] absolute bottom-[10%] right-[10%]"
                             style={{ backgroundImage: `url('${bg2}')`, backgroundRepeat: "no-repeat", backgroundPosition: "center", backgroundSize: "cover" }}>
                         </div>
                     </div>
-                    <div className="col sm:p-7">
+                    <div className="col">
                         <p className='mb-3'>
                             Lorem ipsum dolor, sit amet consectetur adipisicing elit. Exercitationem ipsam corporis quis aperiam officia autem enim. Deleniti eligendi nostrum nobis fuga iusto cupiditate eveniet esse, totam est consectetur, minus debitis.
                         </p>
-                        <p>
-                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Exercitationem ipsam corporis quis aperiam officia autem enim. Deleniti eligendi nostrum nobis fuga iusto cupiditate eveniet esse, totam est consectetur, minus debitis.
-                        </p>
                         <button type='button' className='mt-3 text-sm font-semibold tracking-[1.2px] px-5 py-3 bg-[#47fffcbb] text-[white] rounded-lg'>Download CV</button>
-
                     </div>
                 </div>
             </div>

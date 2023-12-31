@@ -49,8 +49,8 @@ export default function App() {
       {
         messageBox ? <MessageBox setMessageBox={setMessageBox} /> : ''
       }
-      <About/>
-      <Projects/>
+      {/* <About/>
+      <Projects/> */}
     </div>
   )
 }
