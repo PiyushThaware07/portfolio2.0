@@ -1,12 +1,23 @@
-import React from 'react';
+import React, { useState } from 'react';
 import "../static/css/About.css";
+
 // ICONS
-import { MdKeyboardDoubleArrowRight } from "react-icons/md"
-import { RiGraduationCapFill } from "react-icons/ri";
+import { RiGraduationCapLine } from "react-icons/ri";
+import { PiIdentificationCardBold  } from "react-icons/pi";
+
+// COMPONENTS
+import Education from "./Education";
+import Experience from "./Experience"
 
 
 export default function About() {
-
+    const [about, setAbout] = useState(true);
+    function toggleExperience() {
+        setAbout(true);
+    }
+    function toggleEducation() {
+        setAbout(false);
+    }
 
     return (
         <div className='about  px-5 md:px-10 max-w-[1600px] mx-auto pb-10' style={{ fontFamily: "'Poppins', sans-serif" }}>
@@ -27,32 +38,16 @@ export default function About() {
 
                     <div className="flex flex-col items-center">
                         <div className="btn-groups flex flex-nowrap gap-3 items-center justify-center w-full mb-10 mt-5">
-                            <button type='button' className='px-5 py-2 border-2 border-[#47fffc] bg-[#47fffc] text-sm font-semibold'>Education</button>
-                            <button type='button' className='px-5 py-2 border-2 border-[white] text-[white] text-sm font-semibold'>Experience</button>
+                            <button type='button' className={`px-5 py-2 border-[1.7px]  ${about ? 'border-[#47fffc] bg-[#47fffc]' : 'border-[white] text-[white] hover:border-[#47fffc] hover:text-black hover:bg-[#47fffc]'}  text-sm font-semibold flex flex-nowrap items-center gap-1`} onClick={toggleExperience}><PiIdentificationCardBold  className='text-xl' /> Experience</button>
+                            <button type='button' className={`px-5 py-2 border-[1.7px]  ${!about ? 'border-[#47fffc] bg-[#47fffc]' : 'border-[white] text-[white] hover:border-[#47fffc] hover:text-black hover:bg-[#47fffc]'}  text-sm font-semibold flex flex-nowrap items-center gap-1`} onClick={toggleEducation}><RiGraduationCapLine className='text-xl' /> Education</button>
                         </div>
 
-                        <div className="timeline-section px-10">
-                            <div className="timeline-items">
 
-                                <div className="timeline-card mb-12 first:mt-5 last:mb-0 text-white bg-[#272727] border-2 border-[#4f4f4f] rounded-lg px-6 py-8">
-                                    <h1 className='text-md font-semibold mb-3'>B.Tech</h1>
-                                    <h1 className='text-[13px] font-mono leading-6 flex flex-nowrap items-start md:items-center'><MdKeyboardDoubleArrowRight className='text-xl text-[#47fffc]' /> KDK College Of Engineering , Nagpur</h1>
-                                    <h1 className='text-[13px] font-mono leading-6 flex flex-nowrap items-start md:items-center'><MdKeyboardDoubleArrowRight className='text-xl text-[#47fffc]' /> Computer Science & Engineering</h1>
-                                    <span className='circle h-3 w-3 rounded-full bg-[#47fffc]'></span>
-                                    <span className='date text-sm font-mono text-[#47fffc]'>2001-2023</span>
-                                </div>
-                                <div className="timeline-card mb-5 first:mt-5 last:mb-0 text-white bg-[#272727] border-2 border-[#4f4f4f] rounded-lg px-6 py-8">
-                                    <h1 className='text-md font-semibold mb-3'>B.Tech</h1>
-                                    <h1 className='text-[13px] font-mono leading-6 flex flex-nowrap items-start md:items-center'><MdKeyboardDoubleArrowRight className='text-xl text-[#47fffc]' /> KDK College Of Engineering , Nagpur</h1>
-                                    <h1 className='text-[13px] font-mono leading-6 flex flex-nowrap items-start md:items-center'><MdKeyboardDoubleArrowRight className='text-xl text-[#47fffc]' /> Computer Science & Engineering</h1>
-                                    <span className='circle h-3 w-3 rounded-full bg-[#47fffc]'></span>
-                                    <span className='date text-sm font-mono text-[#47fffc]'>2001-2023</span>
-                                </div>
+                        {
+                            about ? <Experience /> : <Education />
+                        }
 
 
-
-                            </div>
-                        </div>
 
                     </div>
                 </div>
