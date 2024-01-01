@@ -65,7 +65,7 @@ export default function Projects() {
                         <div className="cardSlider  rounded-lg gap-10 flex overflow-hidden whitespace-nowrap">
                             {/* sm:p-8 md:p-6 lg:p-10 mt-10 sm:my-5 */}
                             <div className="card bg-white rounded-lg relative" style={{ flex: "0 0 auto", width: "300px" }}>
-                                <div className="thumbnail h-[120px] sm:h-[200px] rounded-t-lg bg-[#2c2c2ce0]" style={{ backgroundImage: `url('${bg1}')`, backgroundRepeat: "no-repeat", backgroundPosition: "center", backgroundSize: "cover" }}></div>
+                                <div className="thumbnail h-[140px] sm:h-[200px] rounded-t-lg bg-[#2c2c2ce0]" style={{ backgroundImage: `url('${bg1}')`, backgroundRepeat: "no-repeat", backgroundPosition: "center", backgroundSize: "cover" }}></div>
                                 <div className="details p-3">
                                     <h1 className='text-sm text-center sm:text-right capitalize' style={{ fontFamily: "'Pacifico', cursive" }}>ShopNow Ecommerce store</h1>
                                 </div>
@@ -74,7 +74,7 @@ export default function Projects() {
                                 </button>
                             </div>
                             <div className="card oveflow-hidden bg-white rounded-lg relative " style={{ flex: "0 0 auto", width: "300px" }}>
-                                <div className="thumbnail h-[120px] sm:h-[200px] rounded-t-lg bg-[#2c2c2ce0]" style={{ backgroundImage: `url('${bg2}')`, backgroundRepeat: "no-repeat", backgroundPosition: "center", backgroundSize: "cover" }}></div>
+                                <div className="thumbnail h-[140px] sm:h-[200px] rounded-t-lg bg-[#2c2c2ce0]" style={{ backgroundImage: `url('${bg2}')`, backgroundRepeat: "no-repeat", backgroundPosition: "center", backgroundSize: "cover" }}></div>
                                 <div className="details p-3">
                                     <h1 className='text-sm text-center sm:text-right capitalize' style={{ fontFamily: "'Pacifico', cursive" }}>Telegram ChatBot</h1>
                                 </div>
@@ -83,7 +83,7 @@ export default function Projects() {
                                 </button>
                             </div>
                             <div className="card bg-white rounded-lg relative " style={{ flex: "0 0 auto", width: "300px" }}>
-                                <div className="thumbnail h-[120px] sm:h-[200px] rounded-t-lg bg-[#2c2c2ce0]" style={{ backgroundImage: `url('${bg3}')`, backgroundRepeat: "no-repeat", backgroundPosition: "center", backgroundSize: "cover" }}></div>
+                                <div className="thumbnail h-[140px] sm:h-[200px] rounded-t-lg bg-[#2c2c2ce0]" style={{ backgroundImage: `url('${bg3}')`, backgroundRepeat: "no-repeat", backgroundPosition: "center", backgroundSize: "cover" }}></div>
                                 <div className="details p-3">
                                     <h1 className='text-sm text-center sm:text-right capitalize' style={{ fontFamily: "'Pacifico', cursive" }}>StoryTeller Blogs</h1>
                                 </div>
@@ -92,7 +92,7 @@ export default function Projects() {
                                 </button>
                             </div>
                             <div className="card bg-white rounded-lg relative " style={{ flex: "0 0 auto", width: "300px" }}>
-                                <div className="thumbnail h-[120px] sm:h-[200px] rounded-t-lg bg-[#2c2c2ce0]" style={{ backgroundImage: `url('${bg4}')`, backgroundRepeat: "no-repeat", backgroundPosition: "center", backgroundSize: "cover" }}></div>
+                                <div className="thumbnail h-[140px] sm:h-[200px] rounded-t-lg bg-[#2c2c2ce0]" style={{ backgroundImage: `url('${bg4}')`, backgroundRepeat: "no-repeat", backgroundPosition: "center", backgroundSize: "cover" }}></div>
                                 <div className="details p-3">
                                     <h1 className='text-sm text-center sm:text-right capitalize' style={{ fontFamily: "'Pacifico', cursive" }}>Chatting App chatnow</h1>
                                 </div>
@@ -102,7 +102,7 @@ export default function Projects() {
                             </div>
 
                             <div className="card  rounded-lg relative border-2 border-[#e1dede4c] hover:border-[#47fffc]  text-[#e1dede4c] hover:text-[#47fffc]" style={{ flex: "0 0 auto", width: "290px" }}>
-                                <div className="thumbnail h-[160px] sm:h-[250px] rounded-t-lg bg-[#2c2c2ce0] relative" style={{ backgroundRepeat: "no-repeat", backgroundPosition: "center", backgroundSize: "cover" }}>
+                                <div className="thumbnail h-[180px] sm:h-[250px] rounded-t-lg bg-[#2c2c2ce0] relative" style={{ backgroundRepeat: "no-repeat", backgroundPosition: "center", backgroundSize: "cover" }}>
                                     <h1 className='text-lg  tracking-[1.2px] font-[400] absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] flex flex-nowrap items-center justify-center gap-2'>More Projects <TbExternalLink /></h1>
                                 </div>
                             </div>
