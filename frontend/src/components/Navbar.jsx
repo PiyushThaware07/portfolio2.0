@@ -21,7 +21,7 @@ export default function Navbar(props) {
     }
 
     return (
-        <div className='navbar  text-white p-4' style={{ fontFamily: "'Poppins', sans-serif" }}>
+        <div className='navbar fixed top-0 w-full z-[9999] bg-[#1a1a1af9] text-white p-4' style={{ fontFamily: "'Poppins', sans-serif" }}>
             <nav className='md:flex flex-nowrap items-center justify-between sm:px-6'>
                 <div className="section-1 flex flex-nowrap items-center justify-between">
                     <div className="logo">
@@ -32,8 +32,8 @@ export default function Navbar(props) {
                 <div className="section-2">
                     <ul className={` ${menu ? '' : 'hidden'} md:flex flex-nowrap items-center gap-4 mt-3 md:mt-0`}>
                         {/* <li className='flex flex-nowrap items-center gap-1 uppercase text-sm'><LuPackageOpen/> About me</li> */}
-                        <li><a href="#skills" className='flex flex-nowrap items-center gap-1 uppercase text-sm hover:text-[#47fffc] transition-all font-medium p-5 md:p-0'><BiLogoGraphql /> Tech Stack</a></li>
-                        <li><a href="#projects" className='flex flex-nowrap items-center gap-1 uppercase text-sm hover:text-[#47fffc] transition-all font-medium p-5 md:p-0'><LuPackageOpen /> Projects</a></li>
+                        <li className='relative hover:translate-y-[-3px] transition-transform'><a href="#skills" className='flex flex-nowrap items-center gap-1 uppercase text-sm hover:text-[#47fffc] transition-all font-medium p-5 md:p-0'><BiLogoGraphql /> Tech Stack</a></li>
+                        <li className='relative hover:translate-y-[-3px] transition-transform'><a href="#projects" className='flex flex-nowrap items-center gap-1 uppercase text-sm hover:text-[#47fffc] transition-all font-medium p-5 md:p-0'><LuPackageOpen /> Projects</a></li>
                         <li className='hidden md:flex flex-nowrap items-center justify-center gap-2 border-2 border-[#47fffc] ps-3 pe-1 py-1 rounded-full cursor-pointer' onClick={() => props.toggleContactModel()}>
                             <h1>Contact</h1>
                             <div className="bg-[#47fffca9] p-2 rounded-full"><FaHeadphonesAlt /></div>

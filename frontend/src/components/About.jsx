@@ -1,5 +1,9 @@
 import React from 'react';
 import "../static/css/About.css";
+// ICONS
+import { MdKeyboardDoubleArrowRight } from "react-icons/md"
+import { RiGraduationCapFill } from "react-icons/ri";
+
 
 export default function About() {
 
@@ -30,30 +34,21 @@ export default function About() {
                         <div className="timeline-section px-10">
                             <div className="timeline-items">
 
-                                <div className="timeline-card first:mt-5 last:mb-0 text-white bg-[#272727] border-2 border-[#4f4f4f] rounded-lg p-5">
-                                    <h1 className='text-md font-semibold'>B.Tech3</h1>
-                                    <h1 className='text-sm'>KDK College Of Engineering , Nagpur</h1>
-                                    <span className='circle h-3 w-3 rounded-full bg-[white]'></span>
+                                <div className="timeline-card mb-12 first:mt-5 last:mb-0 text-white bg-[#272727] border-2 border-[#4f4f4f] rounded-lg px-6 py-8">
+                                    <h1 className='text-md font-semibold mb-3'>B.Tech</h1>
+                                    <h1 className='text-[13px] font-mono leading-6 flex flex-nowrap items-start md:items-center'><MdKeyboardDoubleArrowRight className='text-xl text-[#47fffc]' /> KDK College Of Engineering , Nagpur</h1>
+                                    <h1 className='text-[13px] font-mono leading-6 flex flex-nowrap items-start md:items-center'><MdKeyboardDoubleArrowRight className='text-xl text-[#47fffc]' /> Computer Science & Engineering</h1>
+                                    <span className='circle h-3 w-3 rounded-full bg-[#47fffc]'></span>
                                     <span className='date text-sm font-mono text-[#47fffc]'>2001-2023</span>
                                 </div>
-                                <div className="timeline-card first:mt-5 last:mb-0 text-white bg-[#272727] border-2 border-[#4f4f4f] rounded-lg p-5">
-                                    <h1 className='text-md font-semibold'>B.Tech3</h1>
-                                    <h1 className='text-sm'>KDK College Of Engineering , Nagpur</h1>
-                                    <span className='circle h-3 w-3 rounded-full bg-[white]'></span>
+                                <div className="timeline-card mb-5 first:mt-5 last:mb-0 text-white bg-[#272727] border-2 border-[#4f4f4f] rounded-lg px-6 py-8">
+                                    <h1 className='text-md font-semibold mb-3'>B.Tech</h1>
+                                    <h1 className='text-[13px] font-mono leading-6 flex flex-nowrap items-start md:items-center'><MdKeyboardDoubleArrowRight className='text-xl text-[#47fffc]' /> KDK College Of Engineering , Nagpur</h1>
+                                    <h1 className='text-[13px] font-mono leading-6 flex flex-nowrap items-start md:items-center'><MdKeyboardDoubleArrowRight className='text-xl text-[#47fffc]' /> Computer Science & Engineering</h1>
+                                    <span className='circle h-3 w-3 rounded-full bg-[#47fffc]'></span>
                                     <span className='date text-sm font-mono text-[#47fffc]'>2001-2023</span>
                                 </div>
-                                <div className="timeline-card first:mt-5 last:mb-0 text-white bg-[#272727] border-2 border-[#4f4f4f] rounded-lg p-5">
-                                    <h1 className='text-md font-semibold'>B.Tech3</h1>
-                                    <h1 className='text-sm'>KDK College Of Engineering , Nagpur</h1>
-                                    <span className='circle h-3 w-3 rounded-full bg-[white]'></span>
-                                    <span className='date text-sm font-mono text-[#47fffc]'>2001-2023</span>
-                                </div>
-                                <div className="timeline-card first:mt-5 last:mb-0 text-white bg-[#272727] border-2 border-[#4f4f4f] rounded-lg p-5">
-                                    <h1 className='text-md font-semibold'>B.Tech3</h1>
-                                    <h1 className='text-sm'>KDK College Of Engineering , Nagpur</h1>
-                                    <span className='circle h-3 w-3 rounded-full bg-[white]'></span>
-                                    <span className='date text-sm font-mono text-[#47fffc]'>2001-2023</span>
-                                </div>
+
 
 
                             </div>

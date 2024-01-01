@@ -6,8 +6,8 @@ import { FaPlay } from "react-icons/fa";
 export default function Header() {
 
     return (
-        <div className='header text-white p-10 max-w-[1600px] mx-auto' style={{ fontFamily: "'Poppins', sans-serif" }}>
-            <div className="content grid grid-cols-1 md:grid-cols-2  md:p-7">
+        <div className='header text-white p-10 max-w-[1600px] mx-auto pt-[100px]' style={{ fontFamily: "'Poppins', sans-serif" }}>
+            <div  className="content grid grid-cols-1 md:grid-cols-2  md:p-7">
                 <div className="h-auto md:h-[300px] flex flex-col flex-nowrap items-center justify-center mb-8 md:mb-0">
                     <div className="">
                         <h1 className='text-xl' style={{ fontFamily: "'Pacifico', cursive" }}>Hello there 👋,</h1>
@@ -25,7 +25,7 @@ export default function Header() {
                             <div className="circle-4 text-[#47fffc] rounded-full ms-auto text-sm flex flex-nowrap items-center gap-1 cursor-pointer">Run<FaPlay /></div>
                         </div>
 
-                        <div className="flex flex-nowrap items-center bg-[#ffffff15]">
+                        <div  className="flex flex-nowrap items-center bg-[#ffffff15]">
                             <div id='lineNumbers' className="line-number h-[360px] w-[10%] ps-3 text-[#ffffff2c]">1.</div>
                             <textarea id="textArea" className='h-[360px] w-[90%] rounded-b-lg focus:outline-none bg-transparent'></textarea>
                         </div>

@@ -53,8 +53,8 @@ export default function Contact(props) {
 
     return (
         <>
-            <div className='main-contact fixed top-0 bottom-0 left-0 right-0 bg-[#0f0f0fc8]' style={{ fontFamily: "'Poppins', sans-serif" }}></div>
-            <div className="content fixed top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] ">
+            <div className='main-contact fixed top-0 bottom-0 left-0 right-0 bg-[#151515e1] z-[9999] ' style={{ fontFamily: "'Poppins', sans-serif" }}></div>
+            <div className="content fixed top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] z-[9999] ">
                 <div className="h-auto w-[330px] sm:w-[500px] md:px-5">
                     <div className="h-full border-2 border-[#47fffc] bg-[#212121] rounded-lg shadow-md p-8">
                         <div className="flex flex-nowrap items-center justify-between">
