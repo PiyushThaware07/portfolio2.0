@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timeline 3.0</title>
+
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+        }
+
+        .main {
+            width: 100%;
+            height: auto;
+            background-color: rgba(245, 245, 245);
+            padding: 50px 0;
+            display: grid;
+            place-items: center;
+        }
+
+        .main .heading {
+            font-size: 20px;
+            font-family: Arial, Helvetica, sans-serif;
+            position: relative;
+            margin-bottom: 80px;
+        }
+
+        .main .heading::after {
+            content: '';
+            position: absolute;
+            width: 50%;
+            height: 3px;
+            left: 50%;
+            bottom: -5px;
+            background-image: linear-gradient(to right, rgb(106, 6, 236), rgb(220, 0, 240));
+            transform: translateX(-50%);
+        }
+
+        .container {
+            width: 70%;
+            height: auto;
+            background: red;
+            position: relative;
+        }
+
+        .container ul {
+            list-style: none;
+        }
+
+        .container ul::after {
+            position: absolute;
+            content: '';
+            width: 2px;
+            height: 100%;
+            background-image: linear-gradient(to bottom, rgb(106, 6, 236), rgb(220, 0, 240));
+        }
+
+        .container ul li {
+            width: 50%;
+            height: auto;
+            padding: 15px 20px;
+            background-color: white;
+            box-shadow: 1px 1px 25px rgba(0, 0, 0, .3);
+            border-radius: 10px;
+            margin-bottom: 30px;
+        }
+
+        .container ul li:nth-child(odd) {
+            float: left;
+            clear: right;
+            transform: translateX(-30px);
+            text-align: right;
+        }
+
+        .container ul li:nth-child(even) {
+            float: right;
+            clear: left;
+            transform: translateX(30px);
+            text-align: left;
+        }
+
+
+        .container ul li:last-child() {
+            margin-bottom: 0px;
+        }
+
+        .container ul li {
+            position: relative;
+            z-index: 999;
+        }
+
+        .container ul li .date {
+            position: absolute;
+            top: -40px;
+            background-color: aqua;
+            color: white;
+            border-radius: 50px;
+            padding: 6px 20px;
+        }
+
+        .container ul li:nth-child(odd) .date{
+            right: 20px;
+            float: right;
+        }
+        .container ul li:nth-child(even) .date{
+            left: 20px;
+            float: left;
+        }
+
+        .container ul li .circle {
+            width: 20px;
+            height: 20px;
+            border-radius: 100%;
+            background-color: blue;
+            position: absolute;
+            top: 0;
+        }
+
+        .container ul li:nth-child(odd) .circle {
+            right: -30px;
+            transform: translate(50%, -50%);
+        }
+
+        .container ul li:nth-child(even) .circle {
+            left: -30px;
+            transform: translate(-50%, -50%);
+        }
+
+
+        /* RESPONSIVE ------------------------------------ */
+        @media screen and (max-width:1224px){
+            .container{
+                width: 85%;
+            }
+        }
+        @media screen and (max-width:933px){
+            .container{
+                width: 80%;
+                transform: translateX(15px);
+            }
+
+            .container ul::after{
+                left: -30px;
+            }
+
+            .container ul li{
+                width: 100%;
+                float: none;
+                clear: none;
+                margin-bottom: 80px;
+            }
+            .container ul li:nth-child(odd){
+                transform: translateX(0);
+                text-align: left;
+            }
+            .container ul li:nth-child(odd) .date{
+                left: 20px;
+                right: inherit;
+            }
+            .container ul li:nth-child(odd) .circle{
+                left: -30px;
+            transform: translate(-50%, -50%);
+            }
+            .container ul li:nth-child(even){
+                transform: translateX(0);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main">
+        <h3 class="heading">Responsive Timeline</h3>
+        <div class="container">
+            <ul>
+                <li>
+                    <h3>FrontEnd Developer</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus doloremque dignissimos quam
+                        eligendi blanditiis porro reiciendis, nulla delectus recusandae totam!</p>
+                    <button>Read More</button>
+                    <span class="circle"></span>
+                    <span class="date">January 2023</span>
+                </li>
+                <li>
+                    <h3>BackEnd Developer</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus doloremque dignissimos quam
+                        eligendi blanditiis porro reiciendis, nulla delectus recusandae totam!</p>
+                    <button>Read More</button>
+                    <span class="circle"></span>
+                    <span class="date">January 2023</span>
+                </li>
+                <li>
+                    <h3>FullStack Developer</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus doloremque dignissimos quam
+                        eligendi blanditiis porro reiciendis, nulla delectus recusandae totam!</p>
+                    <button>Read More</button>
+                    <span class="circle"></span>
+                    <span class="date">January 2023</span>
+                </li>
+                <li>
+                    <h3>DataBase Developer</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus doloremque dignissimos quam
+                        eligendi blanditiis porro reiciendis, nulla delectus recusandae totam!</p>
+                    <button>Read More</button>
+                    <span class="circle"></span>
+                    <span class="date">January 2023</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+</body>
+
+</html>

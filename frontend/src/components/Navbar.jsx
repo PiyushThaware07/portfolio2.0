@@ -33,7 +33,7 @@ export default function Navbar(props) {
                     <ul className={` ${menu ? '' : 'hidden'} md:flex flex-nowrap items-center gap-4 mt-3 md:mt-0`}>
                         {/* <li className='flex flex-nowrap items-center gap-1 uppercase text-sm'><LuPackageOpen/> About me</li> */}
                         <li><a href="#skills" className='flex flex-nowrap items-center gap-1 uppercase text-sm hover:text-[#47fffc] transition-all font-medium p-5 md:p-0'><BiLogoGraphql /> Tech Stack</a></li>
-                        <li><Link className='flex flex-nowrap items-center gap-1 uppercase text-sm hover:text-[#47fffc] transition-all font-medium p-5 md:p-0'><LuPackageOpen /> Projects</Link></li>
+                        <li><a href="#projects" className='flex flex-nowrap items-center gap-1 uppercase text-sm hover:text-[#47fffc] transition-all font-medium p-5 md:p-0'><LuPackageOpen /> Projects</a></li>
                         <li className='hidden md:flex flex-nowrap items-center justify-center gap-2 border-2 border-[#47fffc] ps-3 pe-1 py-1 rounded-full cursor-pointer' onClick={() => props.toggleContactModel()}>
                             <h1>Contact</h1>
                             <div className="bg-[#47fffca9] p-2 rounded-full"><FaHeadphonesAlt /></div>

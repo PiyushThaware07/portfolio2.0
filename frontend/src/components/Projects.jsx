@@ -51,14 +51,21 @@ export default function Projects() {
     }
 
     return (
-        <div className='projects pb-10 px-5 md:px-10 max-w-[1600px] mx-auto ' style={{ fontFamily: "'Poppins', sans-serif" }}>
-            <div className="content   ">
-                <div className="p-0 md:p-5  rounded-xl">
-                    <div className="headings mb-2 text-white ps-5">
-                        <h1 className='text-xl' style={{ fontFamily: "'Pacifico', cursive" }}>Some of</h1>
-                        <h1 className='text-5xl font-semibold'>My<span className='text-[#47fffc]'> Projects</span></h1>
+        <div id='projects' className='projects  px-5 md:px-10 max-w-[1600px] mx-auto mt-5' style={{ fontFamily: "'Poppins', sans-serif" }}>
+            <div className="content ">
+                <div className="p-0 md:px-5  rounded-xl">
+                    <div className="flex flex-nowrap items-end gap-2">
+                        <div className="headings mb-2 text-white ps-5">
+                            <h1 className='text-xl' style={{ fontFamily: "'Pacifico', cursive" }}>Some of</h1>
+                            <h1 className='text-4xl md:text-5xl font-semibold whitespace-nowrap'>My<span className='text-[#47fffc]'> Projects</span></h1>
+                        </div>
+                        <div className="line flex flex-col flex-nowrap flex-1 mb-[25px] ">
+                            <div className="line-1 w-full h-[1.4px] bg-[white] mb-1"></div>
+                            <div className="line-2 w-full h-[1.4px] bg-[#47fffc] "></div>
+                        </div>
                     </div>
-                    <div className="wrapper relative p-5  ">
+
+                    <div className="wrapper relative p-5 my-5 md:my-10">
                         <button type='button' id='prevBtn' onClick={handlePrev} className={` ${currentIndex == 0 ? "hidden" : "block"}  h-[40px] w-[40px] bg-white text-black flex flex-nowrap items-center justify-center rounded-full text-lg absolute top-[50%] left-[20px] translate-x-[-50%] translate-y-[-50%] z-[999]`}>
                             <FaAngleLeft />
                         </button>
@@ -69,7 +76,7 @@ export default function Projects() {
                                 <div className="details p-3">
                                     <h1 className='text-sm text-center sm:text-right capitalize' style={{ fontFamily: "'Pacifico', cursive" }}>ShopNow Ecommerce store</h1>
                                 </div>
-                                <button className="icon h-[40px] w-[40px] absolute top-[65%] left-5 bg-[#2c2c2c] border-0 shadow-md shadow-gray-500  rounded-full text-[white] flex flex-nowrap items-center justify-center">
+                                <button className="icon h-[40px] w-[40px] absolute top-[71%] left-5 bg-[#2c2c2c] border-0 shadow-md shadow-gray-500  rounded-full text-[white] flex flex-nowrap items-center justify-center">
                                     <TbExternalLink className='text-xl' />
                                 </button>
                             </div>
@@ -78,7 +85,7 @@ export default function Projects() {
                                 <div className="details p-3">
                                     <h1 className='text-sm text-center sm:text-right capitalize' style={{ fontFamily: "'Pacifico', cursive" }}>Telegram ChatBot</h1>
                                 </div>
-                                <button className="icon h-[40px] w-[40px] absolute top-[65%] left-5 bg-[#2c2c2c] border-0 shadow-md shadow-gray-500  rounded-full text-[white] flex flex-nowrap items-center justify-center">
+                                <button className="icon h-[40px] w-[40px] absolute top-[71%] left-5 bg-[#2c2c2c] border-0 shadow-md shadow-gray-500  rounded-full text-[white] flex flex-nowrap items-center justify-center">
                                     <TbExternalLink className='text-xl' />
                                 </button>
                             </div>
@@ -87,7 +94,7 @@ export default function Projects() {
                                 <div className="details p-3">
                                     <h1 className='text-sm text-center sm:text-right capitalize' style={{ fontFamily: "'Pacifico', cursive" }}>StoryTeller Blogs</h1>
                                 </div>
-                                <button className="icon h-[40px] w-[40px] absolute top-[65%] left-5 bg-[#2c2c2c] border-0 shadow-md shadow-gray-500  rounded-full text-[white] flex flex-nowrap items-center justify-center">
+                                <button className="icon h-[40px] w-[40px] absolute top-[71%] left-5 bg-[#2c2c2c] border-0 shadow-md shadow-gray-500  rounded-full text-[white] flex flex-nowrap items-center justify-center">
                                     <TbExternalLink className='text-xl' />
                                 </button>
                             </div>
@@ -96,7 +103,7 @@ export default function Projects() {
                                 <div className="details p-3">
                                     <h1 className='text-sm text-center sm:text-right capitalize' style={{ fontFamily: "'Pacifico', cursive" }}>Chatting App chatnow</h1>
                                 </div>
-                                <button className="icon h-[40px] w-[40px] absolute top-[65%] left-5 bg-[#2c2c2c] border-0 shadow-md shadow-gray-500  rounded-full text-[white] flex flex-nowrap items-center justify-center">
+                                <button className="icon h-[40px] w-[40px] absolute top-[71%] left-5 bg-[#2c2c2c] border-0 shadow-md shadow-gray-500  rounded-full text-[white] flex flex-nowrap items-center justify-center">
                                     <TbExternalLink className='text-xl' />
                                 </button>
                             </div>
