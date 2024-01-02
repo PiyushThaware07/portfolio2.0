@@ -20,7 +20,7 @@ export default function About() {
     }
 
     return (
-        <div className='about  px-5 md:px-10 max-w-[1600px] mx-auto pb-10' style={{ fontFamily: "'Poppins', sans-serif" }}>
+        <div className='about  px-5 md:px-10 max-w-[1600px] mx-auto pb-10 mt-5 md:mt-9' style={{ fontFamily: "'Poppins', sans-serif" }}>
             <div className="content">
                 <div className="p-0 md:px-5  rounded-xl">
                     <div className="flex flex-nowrap items-end gap-2">

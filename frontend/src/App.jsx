@@ -40,7 +40,7 @@ export default function App() {
 
   return (
     // // bg-gray-950 
-    <div className="bg-[#000000e5]">
+    <div className="bg-[#000000e5] pb-10">
       <Navbar toggleContactModel={toggleContactModel} ColorTemplate={ColorTemplate} />
       <Header />
       {
@@ -50,9 +50,9 @@ export default function App() {
       {
         messageBox ? <MessageBox setMessageBox={setMessageBox} /> : ''
       }
-      <Projects />
       <About />
       <Skills />
+      <Projects />
     </div>
   )
 }

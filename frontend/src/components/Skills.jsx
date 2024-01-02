@@ -10,15 +10,15 @@ import { SiTailwindcss, SiDjango, SiFlask, SiExpress, SiMongodb, SiReplit, SiPhp
 
 export default function Skills() {
     return (
-        <div className='header text-white px-10 max-w-[1600px] mx-auto ' style={{ fontFamily: "'Poppins', sans-serif" }}>
-            <div className="content md:px-7 pb-10">
+        <div className='header text-white px-5 md:px-10 max-w-[1600px] mx-auto ' style={{ fontFamily: "'Poppins', sans-serif" }}>
+            <div className="content md:px-7 ">
                 <div className="section-1">
                     <div className="header grid justify-center">
                         <h1 className='  inline text-xl text-white p-5'>What I Know ?</h1>
                     </div>
                     <div className="line h-[2px] w-full bg-[#47fffc]"></div>
                 </div>
-                <div className="section-2 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 items-start justify-center gap-8 mt-4 p-5">
+                <div className="section-2 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 items-start justify-center gap-8 mt-4 p-3 sm:p-5">
                     <div className="col">
                         <h1 className='text-[#47fffc] flex flex-nowrap items-center gap-2'><MdOutlineDisplaySettings />Front-End</h1>
                         <div className="my-5 flex flex-wrap gap-3">
