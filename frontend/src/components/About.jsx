@@ -3,7 +3,7 @@ import "../static/css/About.css";
 
 // ICONS
 import { RiGraduationCapLine } from "react-icons/ri";
-import { PiIdentificationCardBold  } from "react-icons/pi";
+import { PiIdentificationCardBold } from "react-icons/pi";
 
 // COMPONENTS
 import Education from "./Education";
@@ -21,7 +21,7 @@ export default function About() {
 
     return (
         <div className='about  px-5 md:px-10 max-w-[1600px] mx-auto pb-10 mt-5 md:mt-9' style={{ fontFamily: "'Poppins', sans-serif" }}>
-            <div className="content">
+            <div className="content h-[100vh] md:h-auto w-[100%] md:w-auto">
                 <div className="p-0 md:px-5  rounded-xl">
                     <div className="flex flex-nowrap items-end gap-2">
                         <div className="headings mb-2 text-white ps-5">
@@ -38,7 +38,7 @@ export default function About() {
 
                     <div className="flex flex-col items-center">
                         <div className="btn-groups flex flex-nowrap gap-3 items-center justify-center w-full mb-10 mt-5">
-                            <button type='button' className={`px-5 py-2 border-[1.7px]  ${about ? 'border-[#47fffc] bg-[#47fffc]' : 'border-[white] text-[white] hover:border-[#47fffc] hover:text-black hover:bg-[#47fffc]'}  text-sm font-semibold flex flex-nowrap items-center gap-1`} onClick={toggleExperience}><PiIdentificationCardBold  className='text-xl' /> Experience</button>
+                            <button type='button' className={`px-5 py-2 border-[1.7px]  ${about ? 'border-[#47fffc] bg-[#47fffc]' : 'border-[white] text-[white] hover:border-[#47fffc] hover:text-black hover:bg-[#47fffc]'}  text-sm font-semibold flex flex-nowrap items-center gap-1`} onClick={toggleExperience}><PiIdentificationCardBold className='text-xl' /> Experience</button>
                             <button type='button' className={`px-5 py-2 border-[1.7px]  ${!about ? 'border-[#47fffc] bg-[#47fffc]' : 'border-[white] text-[white] hover:border-[#47fffc] hover:text-black hover:bg-[#47fffc]'}  text-sm font-semibold flex flex-nowrap items-center gap-1`} onClick={toggleEducation}><RiGraduationCapLine className='text-xl' /> Education</button>
                         </div>
 
