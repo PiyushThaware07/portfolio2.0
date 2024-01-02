@@ -20,38 +20,42 @@ export default function About() {
     }
 
     return (
-        <div id="about" className='about  px-5 md:px-10 max-w-[1600px] mx-auto pb-10 mt-5 md:mt-9' style={{ fontFamily: "'Poppins', sans-serif" }}>
-            <div className="content h-[100vh] md:h-auto w-[100%] md:w-auto">
-                <div className="p-0 md:px-5  rounded-xl">
-                    <div className="flex flex-nowrap items-end gap-2">
-                        <div className="headings mb-2 text-white ps-5">
-                            <h1 className='text-xl' style={{ fontFamily: "'Pacifico', cursive" }}>Something</h1>
-                            <h1 className='text-4xl md:text-5xl font-semibold whitespace-nowrap'>About<span className='text-[#47fffc]'> Me</span></h1>
-                        </div>
-                        <div className="line flex flex-col flex-nowrap flex-1 mb-[25px] ">
-                            <div className="line-1 w-full h-[1.4px] bg-[white] mb-1"></div>
-                            <div className="line-2 w-full h-[1.4px] bg-[#47fffc] "></div>
-                        </div>
-                    </div>
-
-
-
-                    <div className="flex flex-col items-center">
-                        <div className="btn-groups flex flex-nowrap gap-3 items-center justify-center w-full mb-10 mt-5">
-                            <button type='button' className={`px-5 py-2 border-[1.7px]  ${about ? 'border-[#47fffc] bg-[#47fffc]' : 'border-[white] text-[white] hover:border-[#47fffc] hover:text-black hover:bg-[#47fffc]'}  text-sm font-semibold flex flex-nowrap items-center gap-1`} onClick={toggleExperience}><PiIdentificationCardBold className='text-xl' /> Experience</button>
-                            <button type='button' className={`px-5 py-2 border-[1.7px]  ${!about ? 'border-[#47fffc] bg-[#47fffc]' : 'border-[white] text-[white] hover:border-[#47fffc] hover:text-black hover:bg-[#47fffc]'}  text-sm font-semibold flex flex-nowrap items-center gap-1`} onClick={toggleEducation}><RiGraduationCapLine className='text-xl' /> Education</button>
+        <>
+        <div id="about" className=" h-[90px]"></div>
+            <div  className='about  px-5 md:px-10 flex flex-col  justify-center h-[100vh] md:h-auto w-[auto] md:max-w-[1600px] mx-auto pb-10 mt-5 md:mt-9' style={{ fontFamily: "'Poppins', sans-serif" }}>
+                <div className="content w-full h-full">
+                    <div className="p-0 md:px-5  rounded-xl">
+                        <div className="flex flex-nowrap items-end gap-2">
+                            <div className="headings mb-2 text-white ps-5">
+                                <h1 className='text-xl' style={{ fontFamily: "'Pacifico', cursive" }}>Something</h1>
+                                <h1 className='text-4xl md:text-5xl font-semibold whitespace-nowrap'>About<span className='text-[#47fffc]'> Me</span></h1>
+                            </div>
+                            <div className="line flex flex-col flex-nowrap flex-1 mb-[25px] ">
+                                <div className="line-1 w-full h-[1.4px] bg-[white] mb-1"></div>
+                                <div className="line-2 w-full h-[1.4px] bg-[#47fffc] "></div>
+                            </div>
                         </div>
 
 
-                        {
-                            about ? <Experience /> : <Education />
-                        }
+
+                        <div className="flex flex-col items-center">
+                            <div className="btn-groups flex flex-nowrap gap-3 items-center justify-center w-full mb-10 mt-5">
+                                <button type='button' className={`px-5 py-2 border-[1.7px]  ${about ? 'border-[#47fffc] bg-[#47fffc]' : 'border-[white] text-[white] hover:border-[#47fffc] hover:text-black hover:bg-[#47fffc]'}  text-sm font-semibold flex flex-nowrap items-center gap-1`} onClick={toggleExperience}><PiIdentificationCardBold className='text-xl' /> Experience</button>
+                                <button type='button' className={`px-5 py-2 border-[1.7px]  ${!about ? 'border-[#47fffc] bg-[#47fffc]' : 'border-[white] text-[white] hover:border-[#47fffc] hover:text-black hover:bg-[#47fffc]'}  text-sm font-semibold flex flex-nowrap items-center gap-1`} onClick={toggleEducation}><RiGraduationCapLine className='text-xl' /> Education</button>
+                            </div>
+
+
+                            {
+                                about ? <Experience /> : <Education />
+                            }
 
 
 
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
+        </>
+
     )
 }
