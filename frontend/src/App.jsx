@@ -6,6 +6,8 @@ import Hero from './components/Hero';
 import Contact from "./components/Contact";
 import MessageBox from './components/MessageBox';
 import About from "./components/About";
+import Skills from "./components/Skills";
+import Projects from "./components/Projects";
 
 export default function App() {
     const [showContactModel, setShowContactModel] = useState(false);
@@ -39,6 +41,8 @@ export default function App() {
                 messageBox ? <MessageBox setMessageBox={setMessageBox} /> : ''
             }
             <About />
+            <Skills />
+            <Projects />
         </div>
     )
 }

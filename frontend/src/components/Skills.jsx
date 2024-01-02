@@ -10,7 +10,7 @@ import { SiTailwindcss, SiDjango, SiFlask, SiExpress, SiMongodb, SiReplit, SiPhp
 
 export default function Skills() {
     return (
-        <div id='skills' className='skills text-white px-5 md:px-10 max-w-[1600px] mx-auto ' style={{ fontFamily: "'Poppins', sans-serif" }}>
+        <div id='skills' className='skills text-white px-5 md:px-10  ' style={{ fontFamily: "'Poppins', sans-serif" }}>
             <div className="content md:h-auto w-[100%] md:w-auto md:px-7">
                 <div className="section-1">
                     <div className="header grid justify-center">

@@ -51,8 +51,8 @@ export default function Projects() {
     }
 
     return (
-        <div id='projects' className='projects relative px-5 md:px-10 flex flex-col  justify-center h-[100vh] md:h-auto w-[auto] md:max-w-[1600px] mx-auto mt-5' style={{ fontFamily: "'Poppins', sans-serif" }}>
-            <div className="content  md:w-auto md:px-7">
+        <div id='projects' className='projects relative pb-10  md:px-10 mt-5' style={{ fontFamily: "'Poppins', sans-serif" }}>
+            <div className="content p-3 md:p-0">
                 <div className="p-0 md:px-5  rounded-xl">
                     <div className="flex flex-nowrap items-end gap-2">
                         <div className="headings mb-2 text-white ps-5">
