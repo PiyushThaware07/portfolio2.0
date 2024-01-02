@@ -1,49 +1,63 @@
 import React, { useState } from 'react';
-import { Link, useNavigate } from "react-router-dom";
-// IMPORT ICONS
-import { LuServerCog } from "react-icons/lu";
-import { HiMenuAlt2 } from "react-icons/hi";
-import { FaHeadphonesAlt } from "react-icons/fa";
-import { LuPackageOpen } from "react-icons/lu";
-import { BiLogoGraphql } from "react-icons/bi";
-import { FaRegFaceLaugh } from "react-icons/fa6";
-
+// ICONS
+import { HiMenuAlt3 } from "react-icons/hi";
+import { GrProjects } from "react-icons/gr";
+import { FaCodeBranch } from "react-icons/fa6";
+import { ImHeadphones } from "react-icons/im";
 
 export default function Navbar(props) {
-    const navigate = useNavigate();
+
+    // HANDLE SMOOTH SCROLL -------------------------------------------
+    const [showNav, setShowNav] = useState(false);
+    var lastScrollTop = 0;
+    window.addEventListener("scroll", () => {
+        var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        if (scrollTop > lastScrollTop) {
+            setShowNav(true)
+        }
+        else {
+            setShowNav(false);
+        }
+        lastScrollTop = scrollTop;
+    })
+
+    // HANDLE RESPONSIVE MENU -------------------------------------------
     const [menu, setMenu] = useState(false);
     function toggleMenu() {
         setMenu(!menu)
     }
-
     function handleContactWithMenu() {
         setMenu(false);
         props.toggleContactModel();
     }
 
     return (
-        <div className='navbar fixed top-0 w-full z-[9999] bg-[#1a1a1af9] text-white p-4' style={{ fontFamily: "'Poppins', sans-serif" }}>
-            <nav className='md:flex flex-nowrap items-center justify-between sm:px-6'>
-                <div className="section-1 flex flex-nowrap items-center justify-between">
-                    <div className="logo">
-                        <h1 onClick={() => navigate('/')} className='cursor-pointer text-xl flex flex-nowrap items-center justify-center border-2 border-[#ffffff2b]  h-[40px] w-[40px] rounded-full shadow-sm shadow-slate-500' style={{ fontFamily: "'Pacifico', cursive" }} >pt</h1>
+        <>
+            {/* NAVBAR START ============================================================================== */}
+            <div className={`navbar ${showNav ? '' : 'hidden'} transition-all ease-in-out duration-300 animate-navbar`}>
+                <nav id='navbar' className={` fixed top-0 w-full z-[999] bg-white px-10 py-3  md:flex flex-nowrap items-center justify-between`}>
+                    <div className="section-1 flex flex-nowrap items-center justify-between">
+                        <h1 className=' cursor-pointer text-md ' style={{ fontFamily: "'Pacifico', cursive" }}>Code</h1>
+                        <h1 className='md:hidden h-[40px] w-[40px] cursor-pointer bg-[black]   text-[#47fffc] rounded-full flex flex-nowrap items-center justify-center' onClick={toggleMenu}><HiMenuAlt3 className='text-xl' /></h1>
                     </div>
-                    <div className="md:hidden menu text-2xl bg-[#414141] p-2 rounded-full cursor-pointer" onClick={toggleMenu}><HiMenuAlt2 /></div>
-                </div>
-                <div className="section-2">
-                    <ul className={` ${menu ? '' : 'hidden'} md:flex flex-nowrap items-center gap-4 mt-3 md:mt-0`}>
-                        {/* <li className='flex flex-nowrap items-center gap-1 uppercase text-sm'><LuPackageOpen/> About me</li> */}
-                        <li className='relative hover:translate-y-[-3px] transition-transform'><a href="#about" className='flex flex-nowrap items-center gap-1 uppercase text-sm hover:text-[#47fffc] transition-all font-medium p-5 md:p-0' onClick={toggleMenu}><FaRegFaceLaugh /> About Me</a></li>
-                        <li className='relative hover:translate-y-[-3px] transition-transform'><a href="#skills" className='flex flex-nowrap items-center gap-1 uppercase text-sm hover:text-[#47fffc] transition-all font-medium p-5 md:p-0' onClick={toggleMenu}><BiLogoGraphql /> Tech Stack</a></li>
-                        <li className='relative hover:translate-y-[-3px] transition-transform'><a href="#projects" className='flex flex-nowrap items-center gap-1 uppercase text-sm hover:text-[#47fffc] transition-all font-medium p-5 md:p-0' onClick={toggleMenu}><LuPackageOpen /> Projects</a></li>
-                        <li className='hidden md:flex flex-nowrap items-center justify-center gap-2 border-2 border-[#47fffc] ps-3 pe-1 py-1 rounded-full cursor-pointer' onClick={() => props.toggleContactModel()}>
-                            <h1>Contact</h1>
-                            <div className="bg-[#47fffca9] p-2 rounded-full"><FaHeadphonesAlt /></div>
-                        </li>
-                        <li><Link className='flex md:hidden flex-nowrap items-center gap-1 uppercase text-sm hover:text-[#47fffc] transition-all font-medium p-5 md:p-0 cursor-pointer' onClick={handleContactWithMenu} ><FaHeadphonesAlt /> Contact me</Link></li>
-                    </ul>
-                </div>
-            </nav>
-        </div>
+                    <div className="section-2">
+                        <ul className={`${menu ? '' : 'hidden'}  md:flex flex-nowrap items-center gap-6 text-md font-semibold`}>
+                            <li><a href="#about" className='flex flex-nowrap items-center gap-1 py-5 md:p-0 hover:text-[#47fffc] cursor-pointer hover:translate-y-[-2px] transition-transform'><GrProjects /> Projects</a></li>
+                            <li><a href="" className='flex flex-nowrap items-center gap-1 md:gap-0 py-5 md:p-0 hover:text-[#47fffc] cursor-pointer hover:translate-y-[-2px] transition-transform'><FaCodeBranch className='text-xl' />Tech Stack</a></li>
+                            <li className='hidden md:flex flex-nowrap items-center gap-1 border-2 border-black bg-[#47fffc] rounded-full ps-5 pe-1 py-1 cursor-pointer' onClick={() => props.toggleContactModel()}>
+                                <h1>Contact</h1>
+                                <h1 className='h-[30px] w-[30px] rounded-full flex flex-nowrap items-center justify-center bg-[white] '>
+                                    <ImHeadphones className='text-sm' />
+                                </h1>
+                            </li>
+                            <li className='flex md:hidden flex-nowrap items-center gap-1 py-5 md:p-0 hover:text-[#47fffc] cursor-pointer hover:translate-y-[-2px] transition-transform' onClick={handleContactWithMenu}><ImHeadphones className='text-md' />Contact</li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+
+            {/* NAVBAR ENDS ============================================================================== */}
+        </>
+
     )
 }

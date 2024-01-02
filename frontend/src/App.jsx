@@ -2,57 +2,43 @@ import React, { useEffect, useState } from 'react';
 import "./App.css";
 // IMPORT COMPONENTS
 import Navbar from "./components/Navbar";
-import Header from "./components/Header";
+import Hero from './components/Hero';
 import Contact from "./components/Contact";
 import MessageBox from './components/MessageBox';
-import Projects from './components/Projects';
 import About from "./components/About";
-import Skills from "./components/Skills";
 
 export default function App() {
-  // COLOR TEMPLATE GLOBAL
-  const ColorTemplate = {
-    textWhite: "white",
-    textColor: "#47fffc",
-    bgColor: "#47fffc",
-    mainColor: "#000000e5"
-  }
+    const [showContactModel, setShowContactModel] = useState(false);
+    function toggleContactModel() {
+        setShowContactModel(!showContactModel);
+    }
+    useEffect(() => {
+        document.body.style.overflowY = showContactModel ? "hidden" : "scroll";
+    }, [showContactModel])
 
 
-  const [showContactModel, setShowContactModel] = useState(false);
-  function toggleContactModel() {
-    setShowContactModel(!showContactModel);
-  }
-  useEffect(() => {
-    document.body.style.overflowY = showContactModel ? "hidden" : "scroll";
-  }, [showContactModel])
+    // MESSAGE BOX HANDLING -----------------------------(getting data from child)
+    const [messageBox, setMessageBox] = useState(false);
+    // console.log("APP ", messageBox);
+    useEffect(() => {
+        setTimeout(() => {
+            setMessageBox(false);
+        }, 5200);
+    })
 
 
-  // MESSAGE BOX HANDLING -----------------------------(getting data from child)
-  const [messageBox, setMessageBox] = useState(false);
-  // console.log("APP ", messageBox);
-  useEffect(() => {
-    setTimeout(() => {
-      setMessageBox(false);
-    }, 5200);
-  })
+    return (
+        <div className='main bg-[#181818] max-w-[1600px] mx-auto' style={{ fontFamily: "'Poppins', sans-serif" }}>
+            <Navbar toggleContactModel={toggleContactModel} />
+            <Hero />
+            {
+                showContactModel ? <Contact toggleContactModel={toggleContactModel} setMessageBox={setMessageBox} /> : ''
+            }
 
-
-  return (
-    // // bg-gray-950 
-    <div className="bg-[#000000e5] pb-10">
-      <Navbar toggleContactModel={toggleContactModel} ColorTemplate={ColorTemplate} />
-      <Header />
-      {
-        showContactModel ? <Contact toggleContactModel={toggleContactModel} setMessageBox={setMessageBox} /> : ''
-      }
-
-      {
-        messageBox ? <MessageBox setMessageBox={setMessageBox} /> : ''
-      }
-      <About />
-      <Skills />
-      <Projects />
-    </div>
-  )
+            {
+                messageBox ? <MessageBox setMessageBox={setMessageBox} /> : ''
+            }
+            <About />
+        </div>
+    )
 }
