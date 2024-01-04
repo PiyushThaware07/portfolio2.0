@@ -30,7 +30,7 @@ export default function App() {
 
 
     return (
-        <div className='main bg-[#181818] max-w-[1600px] mx-auto' style={{ fontFamily: "'Poppins', sans-serif" }}>
+        <div className='main bg-[#181818]  mx-auto' style={{ fontFamily: "'Poppins', sans-serif" }}>
             <Navbar toggleContactModel={toggleContactModel} />
             <Hero />
             {
