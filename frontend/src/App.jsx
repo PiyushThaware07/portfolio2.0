@@ -1,48 +1,23 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
+// CSS
 import "./App.css";
-// IMPORT COMPONENTS
-import Navbar from "./components/Navbar";
-import Hero from './components/Hero';
-import Contact from "./components/Contact";
-import MessageBox from './components/MessageBox';
-import About from "./components/About";
-import Skills from "./components/Skills";
+// Components
+import Navbar from './components/Navbar';
+import Header from "./components/Header";
+import TechStack from './components/TechStack';
 import Projects from "./components/Projects";
+import Footer from "./components/Footer";
+
+
 
 export default function App() {
-    const [showContactModel, setShowContactModel] = useState(false);
-    function toggleContactModel() {
-        setShowContactModel(!showContactModel);
-    }
-    useEffect(() => {
-        document.body.style.overflowY = showContactModel ? "hidden" : "scroll";
-    }, [showContactModel])
-
-
-    // MESSAGE BOX HANDLING -----------------------------(getting data from child)
-    const [messageBox, setMessageBox] = useState(false);
-    // console.log("APP ", messageBox);
-    useEffect(() => {
-        setTimeout(() => {
-            setMessageBox(false);
-        }, 5200);
-    })
-
-
-    return (
-        <div className='main bg-[#181818]  mx-auto' style={{ fontFamily: "'Poppins', sans-serif" }}>
-            <Navbar toggleContactModel={toggleContactModel} />
-            <Hero />
-            {
-                showContactModel ? <Contact toggleContactModel={toggleContactModel} setMessageBox={setMessageBox} /> : ''
-            }
-
-            {
-                messageBox ? <MessageBox setMessageBox={setMessageBox} /> : ''
-            }
-            <About />
-            <Skills />
-            <Projects />
-        </div>
-    )
+  return (
+    <div className='main min-h-screen min-w-screen  ' style={{ fontFamily: "'Poppins', sans-serif" }} >
+      <Navbar />
+      <Header />
+      <TechStack />
+      <Projects />
+      <Footer />
+    </div >
+  )
 }
