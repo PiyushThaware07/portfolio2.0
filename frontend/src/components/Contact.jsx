@@ -1,10 +1,28 @@
 import React from 'react';
+import { useForm } from "react-hook-form";
 // ICONS
 import { GoDotFill } from "react-icons/go";
+import { MdError } from "react-icons/md";
 
 
 
 export default function Contact(props) {
+  // import.meta.env.VITE_REACT_APP_BACKEND_URL 
+  const { register, handleSubmit, formState: { errors } } = useForm();
+
+  async function handleContactForm(data) {
+    console.log("Request : ");
+    console.table(data);
+    const request = await fetch(`${import.meta.env.VITE_REACT_APP_BACKEND_URL}/contact`, {
+      method: "post",
+      body: JSON.stringify(data),
+      headers: {
+        "Content-Type": "application/json"
+      }
+    });
+    const response = await request.json();
+    console.warn("Response : ", response);
+  }
 
   return (
     <>
@@ -16,14 +34,41 @@ export default function Contact(props) {
               <GoDotFill className='text-cyan-400 text-lg' />
               <h1 className='text-lg font-semibold capitalize'>Get In <span className=''>Touch</span></h1>
             </div>
-            <form action="" className='p-5'>
-              <input type="text" placeholder='Full Name' className='border-b-2 border-black bg-transparent focus:outline-none ps-2 pb-3 mb-7 w-full font-semibold text-sm' />
-              <input type="text" placeholder='@Email' className='border-b-2 border-black bg-transparent focus:outline-none ps-2 pb-3 mb-7 w-full font-semibold text-sm' />
-             <textarea placeholder='Leave a message here...' className='h-[130px] border-b-2 border-black bg-transparent focus:outline-none ps-2 pb-3 mb-5 w-full font-semibold text-sm'></textarea>
-             <div className="flex flex-nowrap items-center gap-3">
-             <button type='submit' className='py-2 px-5 bg-slate-950 text-white font-semibold text-sm rounded-md' >Send</button>
-             <button type='button' className='py-2 px-5 bg-cyan-500 text-white font-semibold text-sm rounded-md' onClick={props.toggleContactForm} >Close</button>
-             </div>
+            <form action="" className='p-5' onSubmit={handleSubmit(handleContactForm)}>
+
+              {errors.fullname?.message || errors.email?.message ? (
+                <div className="p-2 mb-4 bg-red-100 border-[1.4px] border-red-400 rounded-md flex flex-nowrap items-center gap-2">
+                  <MdError className='text-red-500' />
+                  <h1 className='text-md font-semibold text-red-500'>{errors.fullname?.message || errors.email?.message}</h1>
+                </div>
+              ) : null}
+
+
+
+
+              <input type="text" placeholder='Full Name' className='border-b-2 border-black bg-transparent focus:outline-none ps-2 pb-3 mb-7 w-full font-semibold text-sm'
+                {...register("fullname",
+                  {
+                    required: "Full Name is Required"
+                  }
+                )} />
+              <input type="text" placeholder='@Email' className='border-b-2 border-black bg-transparent focus:outline-none ps-2 pb-3 mb-7 w-full font-semibold text-sm'
+                {...register("email",
+                  {
+                    required: "Email is Required",
+                    pattern: {
+                      value: /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/,
+                      message: "Please Provide a valid email address"
+                    }
+                  }
+                )} />
+              <textarea placeholder='Leave a message here...' className='h-[130px] border-b-2 border-black bg-transparent focus:outline-none ps-2 pb-3 mb-5 w-full font-semibold text-sm'
+                {...register("message")}>
+              </textarea>
+              <div className="flex flex-nowrap items-center gap-3">
+                <button type='submit' className='py-2 px-5 bg-slate-950 text-white font-semibold text-sm rounded-md' >Send</button>
+                <button type='button' className='py-2 px-5 bg-cyan-500 text-white font-semibold text-sm rounded-md' onClick={props.toggleContactForm} >Close</button>
+              </div>
             </form>
           </div>
         </div>

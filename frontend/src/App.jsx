@@ -17,7 +17,6 @@ import Contact from "./components/Contact";
 export default function App() {
   const [showContactModel, setshowContactModel] = useState(false);
   function toggleContactForm() {
-    console.log("Clicked");
     setshowContactModel(!showContactModel);
   }
   useEffect(() => {
