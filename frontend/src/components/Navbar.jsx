@@ -14,8 +14,8 @@ export default function Navbar() {
 
         </div>
         <div className="section-2">
-          <button type='button' className='flex flex-nowrap items-center gap-1 bg-blue-500 text-white px-4 py-2 rounded-md'>
-            <h1 className='text-[13px] tracking-[1px]'>Contact Me </h1>
+          <button type='button' className='flex flex-nowrap items-center gap-1 bg-gradient-to-r from-cyan-500 to-blue-500 text-white px-4 py-2 rounded-md'>
+            <h1 className='text-[13px] tracking-[1px]'>Reach Me </h1>
             <BiUser />
           </button>
         </div>

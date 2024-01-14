@@ -9,6 +9,7 @@ import Projects from "./components/Projects";
 import Footer from "./components/Footer";
 import Services from "./components/Services";
 import Experience from "./components/Experience";
+import Resume from "./components/Resume";
 
 
 
@@ -20,7 +21,8 @@ export default function App() {
       <TechStack />
       <Projects />
       {/* <Services/> */}
-      <Experience/>
+      <Experience />
+      <Resume />
       <Footer />
     </div >
   )

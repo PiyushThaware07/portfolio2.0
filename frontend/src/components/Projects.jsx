@@ -35,10 +35,10 @@ export default function Projects() {
           <Carousel
             breakPoints={breakPoints}
             showArrows={false}
-            easing="cubic-bezier(1,.15,.55,1.54)"
-            transitionMs={700}
+            
             enableSwipe={true}
             enableMouseSwipe={true}
+            
           >
             {state.items.map((item, index) => (
               <div className="card h-full card  flex-1 mx-1 rounded-lg relative" key={index}>
