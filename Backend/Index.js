@@ -1,19 +1,19 @@
 require('dotenv').config();
 const express = require("express");
 const app = express();
-const cors = require("cors");
+// const cors = require("cors");
 // Import Router =====================================
 const router = require("./router/router");
 // Middleware
-app.use(cors());
-app.use(express.json())
+// app.use(cors());
+// app.use(express.json())
 
 // Home Route
 app.get('/', (request, response) => {
     response.send({ message: "Working" });
 })
 // Routers
-app.use("/api/", router);
+// app.use("/api/", router);
 
 
 const port = 8000;
