@@ -16,7 +16,7 @@ app.get('/', (request, response) => {
 app.use("/api/", router);
 
 
-const port = Number(process.env.PORT) || 1000
+const port = 8000;
 app.listen(port, () => {
-    console.log(`server is started at  port http://localhost:${port}`);
+    console.log(`Server Started at port ${port}`);
 })
