@@ -7,7 +7,7 @@ import { IoIosArrowForward } from "react-icons/io";
 export default function Navbar() {
   return (
     <>
-     <nav className='flex flex-nowrap items-center justify-between px-8 md:px-10 py-3 bg-white sticky top-0 left-0 w-full shadow-sm' >
+     <nav className='flex flex-nowrap items-center justify-between px-8 md:px-10 py-3 bg-white sticky top-0 left-0 w-full shadow-sm z-[9999]' >
         <div className="section-1 flex flex-nowrap items-center gap-5">
           <div className="logo flex flex-nowrap items-center gap-1"><h1 className='font-medium cursor-pointer'>CSE</h1> <FcEngineering className='animate-spin text-orange-500' /></div>
           {/* Design,Develop,Deploy */}

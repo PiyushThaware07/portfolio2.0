@@ -7,6 +7,8 @@ import Header from "./components/Header";
 import TechStack from './components/TechStack';
 import Projects from "./components/Projects";
 import Footer from "./components/Footer";
+import Services from "./components/Services";
+import Experience from "./components/Experience";
 
 
 
@@ -17,6 +19,8 @@ export default function App() {
       <Header />
       <TechStack />
       <Projects />
+      {/* <Services/> */}
+      <Experience/>
       <Footer />
     </div >
   )

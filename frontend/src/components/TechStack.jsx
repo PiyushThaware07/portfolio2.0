@@ -15,7 +15,7 @@ export default function TechStack() {
                     <h1 className=' text-lg font-bold text-center uppercase text-slate-500 text-nowrap'>Tech Stack</h1>
                     <div className="line-after h-[1.5px] w-full bg-slate-300"></div>
                 </div>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 pt-6">
                     <div className="card h-full card border-2 hover:border-dotted border-spacing-2 border-white hover:border-black rounded-lg ">
                         <div className="h-full border-2 border-black hover:bg-blue-100 rounded-lg hover:translate-x-[-5px] hover:translate-y-[-5px] transition-all   px-5 py-3">
                             <div className="my-3 md:my-5">

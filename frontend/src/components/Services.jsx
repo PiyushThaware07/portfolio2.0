@@ -29,7 +29,7 @@ const services = [
 export default function Services() {
     return (
         <>
-            <div className="px-6 sm:px-10 md:px-16  pb-10 pt-6">
+            <div className="px-6 sm:px-10 md:px-16  pb-10">
                 <div className="mb-5 flex flex-nowrap items-center gap-3">
                     <div className="line-before h-[1.5px] w-full bg-slate-300"></div>
                     <h1 className=' text-lg font-bold text-center uppercase text-slate-500'>Services</h1>
