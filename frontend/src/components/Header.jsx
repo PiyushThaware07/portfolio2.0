@@ -11,7 +11,7 @@ export default function Header() {
                     <h1 className='text-xl' style={{ fontFamily: "'Pacifico', cursive" }}>Hello there 👋,</h1>
                     <h1 className='text-3xl sm:text-4xl font-bold sm:font-semibold'>My <span className=''>name</span> is <br /><span className=''>Piyush Thaware.</span></h1>
                     <h1 className='text-sm my-3 font-[500]'> I am an enthusiastic and dedicated individual, eager to utilize my skills and knowledge to create meaningful and impactful projects.</h1>
-                    <button className='py-2 px-4 border-2 border-[black] bg-blue-400 text-black rounded-lg font-semibold'>Download CV</button>
+                    <button className='py-2 px-4 border-2 border-[black] bg-gradient-to-r from-cyan-500 to-blue-500 text-white rounded-lg font-semibold'>Download CV</button>
                 </div>
                 <div className="col h-[300px] order-1 md:order-2">
                     <img src={hero} alt="" className='h-full w-full object-contain' />
