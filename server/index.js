@@ -15,7 +15,7 @@ app.use(express.json());
 
 
 app.get("/", (request, response) => {
-    response.send(`Server is started ${process.env.PORT}`);
+    response.send(`Server is started`);
 })
 
 // Routers -------------------------------------------------------------------------
@@ -29,8 +29,8 @@ app.use("/api", router);
 async function startServer() {
     try {
         await connectDB();
-        app.listen(process.env.PORT, () => {
-            console.log(`Server Is Started on port http://localhost:${process.env.PORT}/`);
+        app.listen(1000, () => {
+            console.log(`Server Is Started on port http://localhost:1000/`);
         })
     }
     catch (error) {

@@ -10,6 +10,6 @@ const contactSchema = new mongoose.Schema({
 });
 
 // Creating Model
-const contactModel = mongoose.model(process.env.COLLECTION_CONTACT, contactSchema);
+const contactModel = mongoose.model('contacts', contactSchema);
 
 module.exports = contactModel;
