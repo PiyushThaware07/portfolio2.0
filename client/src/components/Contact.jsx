@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 // * REACT HOOK FORM =================================================================
 import { useForm } from "react-hook-form";
-// * EMAIL JS SETUP ==================================================================
-import emailjs from '@emailjs/browser';
+
 // * ICONS ===========================================================================
 import { GoDotFill } from "react-icons/go";
 import { MdError } from "react-icons/md";
