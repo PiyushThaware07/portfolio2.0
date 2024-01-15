@@ -13,7 +13,7 @@ export default function Contact(props) {
   async function handleContactForm(data) {
     console.log("Request : ");
     console.table(data);
-    const request = await fetch(`${import.meta.env.VITE_REACT_APP_BACKEND_URL}/contact`, {
+    const request = await fetch(`http://localhost:8000/api/contact`, {
       method: "post",
       body: JSON.stringify(data),
       headers: {
