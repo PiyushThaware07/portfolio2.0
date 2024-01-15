@@ -8,6 +8,8 @@ import { MdError } from "react-icons/md";
 import { BiLoaderAlt } from "react-icons/bi";
 
 
+const backendURL = import.meta.env.VITE_REACT_APP_HOST_ENV == "production" ? import.meta.env.VITE_REACT_APP_ONLINE_BACKEND_URL : import.meta.env.VITE_REACT_APP_OFFLINE_BACKEND_URL;
+
 export default function Contact(props) {
   const [preLoader, setPreLoader] = useState(false);
 
@@ -21,7 +23,7 @@ export default function Contact(props) {
     try {
       // * set preloader -------------------------------------------------------------
       setPreLoader(true);
-      const request = await fetch(`${import.meta.env.VITE_REACT_APP_OFFLINE_BACKEND_URL || import.meta.env.VITE_REACT_APP_ONLINE_BACKEND_URL}/contact`, {
+      const request = await fetch(`${backendURL}/contact`, {
         method: "post",
         body: JSON.stringify(data),
         headers: {
