@@ -34,7 +34,7 @@
     /* Circle ---------------------------------------------------------------- */
     /* ODD ================== */
     .timelineContainer .timeline-items .timeline-item:nth-child(odd) .circle {
-        top: -35px;
+        top: 0px;
         right: 0px;
         transform: translateX(139px);
     }
@@ -49,7 +49,7 @@
 
     /* EVEN ================== */
     .timelineContainer .timeline-items .timeline-item:nth-child(even) .circle {
-        top: -35px;
+        top: 0px;
         left: 0px;
         transform: translateX(-139px);
     }
@@ -65,7 +65,7 @@
 
 
     /* Media Query */
-    @media screen and (max-width:766px) {
+    @media screen and (max-width:768px) {
         .timelineContainer .timeline-items .timeline-item {
             margin-bottom: 50px;
         }
