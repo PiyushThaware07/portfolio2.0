@@ -1,27 +1,48 @@
-import React from 'react';
+import React, { useState } from 'react';
+// * REACT HOOK FORM =================================================================
 import { useForm } from "react-hook-form";
-// ICONS
+// * EMAIL JS SETUP ==================================================================
+import emailjs from '@emailjs/browser';
+// * ICONS ===========================================================================
 import { GoDotFill } from "react-icons/go";
 import { MdError } from "react-icons/md";
-
+import { BiLoaderAlt } from "react-icons/bi";
 
 
 export default function Contact(props) {
-  // import.meta.env.VITE_REACT_APP_BACKEND_URL 
-  const { register, handleSubmit, formState: { errors } } = useForm();
+  const [preLoader, setPreLoader] = useState(false);
 
+  // ? REACT FORM HOOK ----------------------------------------------------------------
+  const { register, handleSubmit, formState: { errors }, setError } = useForm();
+
+  // ? HANDLE SUBMIT ------------------------------------------------------------------
   async function handleContactForm(data) {
     console.log("Request : ");
     console.table(data);
-    const request = await fetch(`${import.meta.env.VITE_REACT_APP_OFFLINE_BACKEND_URL || import.meta.env.VITE_REACT_APP_ONLINE_BACKEND_URL}/contact`, {
-      method: "post",
-      body: JSON.stringify(data),
-      headers: {
-        "Content-Type": "application/json"
+    try {
+      // * set preloader -------------------------------------------------------------
+      setPreLoader(true);
+      const request = await fetch(`${import.meta.env.VITE_REACT_APP_OFFLINE_BACKEND_URL || import.meta.env.VITE_REACT_APP_ONLINE_BACKEND_URL}/contact`, {
+        method: "post",
+        body: JSON.stringify(data),
+        headers: {
+          "Content-Type": "application/json"
+        }
+      });
+      const response = await request.json();
+      console.warn("Response : ", response.success);
+      // ^ Response -----------------------------------------------------------------
+      if (response.success) {
+        setPreLoader(false);
+        props.toggleContactForm();
       }
-    });
-    const response = await request.json();
-    console.warn("Response : ", response);
+      else {
+        setError("Sorry ,failed to submit data")
+      }
+    }
+    catch (error) {
+      console.error("Failed to submit data there is some internal server error");
+    }
   }
 
   return (
@@ -44,14 +65,14 @@ export default function Contact(props) {
               ) : null}
 
 
-
-
               <input type="text" placeholder='Full Name' className='border-b-2 border-black bg-transparent focus:outline-none ps-2 pb-3 mb-7 w-full font-semibold text-sm'
                 {...register("fullname",
                   {
                     required: "Full Name is Required"
                   }
                 )} />
+
+
               <input type="text" placeholder='@Email' className='border-b-2 border-black bg-transparent focus:outline-none ps-2 pb-3 mb-7 w-full font-semibold text-sm'
                 {...register("email",
                   {
@@ -62,11 +83,20 @@ export default function Contact(props) {
                     }
                   }
                 )} />
+
+
               <textarea placeholder='Leave a message here...' className='h-[130px] border-b-2 border-black bg-transparent focus:outline-none ps-2 pb-3 mb-5 w-full font-semibold text-sm'
                 {...register("message")}>
               </textarea>
+
+
               <div className="flex flex-nowrap items-center gap-3">
-                <button type='submit' className='py-2 px-5 bg-slate-950 text-white font-semibold text-sm rounded-md' >Send</button>
+                {
+                  preLoader ?
+                    <button type='submit' className='py-2 px-5 bg-slate-950 text-white font-semibold text-sm rounded-md flex flex-nowrap items-center gap-2' >Sending <BiLoaderAlt className='animate-spin' /></button>
+                    :
+                    <button type='submit' className='py-2 px-5 bg-slate-950 text-white font-semibold text-sm rounded-md' >Send</button>
+                }
                 <button type='button' className='py-2 px-5 bg-cyan-500 text-white font-semibold text-sm rounded-md' onClick={props.toggleContactForm} >Close</button>
               </div>
             </form>
