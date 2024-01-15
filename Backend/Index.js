@@ -10,7 +10,7 @@ const router = require("./router/router");
 
 // Home Route
 app.get('/', (request, response) => {
-    response.send({ message: "Working" });
+    response.send("Server is working");
 })
 // Routers
 // app.use("/api/", router);
