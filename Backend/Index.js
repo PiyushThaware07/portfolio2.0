@@ -7,6 +7,6 @@ app.get("/", (request, response) => {
 })
 
 
-app.listen(process.env.PORT, () => {
-    console.log("Server Started at port ", process.env.PORT);
+app.listen(8000, () => {
+    console.log("Server Started at port ", 8000);
 })
