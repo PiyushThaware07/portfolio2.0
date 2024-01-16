@@ -14,10 +14,12 @@ import Services from "./components/Services";
 import Experience from "./components/Experience";
 import Resume from "./components/Resume";
 import Contact from "./components/Contact";
+import MessageBox from './components/MessageBox';
 
 
 
 export default function App() {
+  // Handle Contact Form ====================================================
   const [showContactModel, setshowContactModel] = useState(false);
   function toggleContactForm() {
     setshowContactModel(!showContactModel);
@@ -25,6 +27,9 @@ export default function App() {
   useEffect(() => {
     document.body.style.overflowY = showContactModel ? "hidden" : "scroll";
   }, [showContactModel])
+
+  // Handle Message Box =====================================================
+  const [showMessageBox, setShowMessageBox] = useState(false);
 
 
   return (
@@ -37,7 +42,11 @@ export default function App() {
       <Resume />
       {/* <Services/> */}
       {
-        showContactModel && <Contact backendURL={backendURL} toggleContactForm={toggleContactForm} />
+        showContactModel && <Contact backendURL={backendURL} toggleContactForm={toggleContactForm} setShowMessageBox={setShowMessageBox} />
+      }
+
+      {
+        showMessageBox && <MessageBox setShowMessageBox={setShowMessageBox} />
       }
       <Footer />
     </div >

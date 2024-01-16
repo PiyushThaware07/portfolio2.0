@@ -5,7 +5,17 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      keyframes: {
+        loading: {
+          '0%': { width: '30%' },
+          '100%': { width: '100%' },
+        },
+      },
+      animation: {
+        loading: 'loading 5s linear',
+      },
+    },
   },
   plugins: [],
 }

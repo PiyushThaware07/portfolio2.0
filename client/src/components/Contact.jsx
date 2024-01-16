@@ -33,9 +33,11 @@ export default function Contact(props) {
       if (response.success) {
         setPreLoader(false);
         props.toggleContactForm();
+        props.setShowMessageBox(true);
       }
       else {
-        setError("Sorry ,failed to submit data")
+        setError("Sorry ,failed to submit data");
+        props.setShowMessageBox(false);
       }
     }
     catch (error) {
