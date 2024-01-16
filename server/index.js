@@ -6,7 +6,8 @@ const cors = require("cors");
 const router = require("./router/router");
 
 // Import MongoDB Connection ======================================================
-const connectDB = require("./db/connect");
+// const connectDB = require("./db/connect");
+require("./db/connect");
 
 
 // Middlewares --------------------------------------------------------------------
@@ -25,6 +26,7 @@ app.use("/api", router);
 
 
 // Server Starting Function ========================================================
+/*
 async function startServer() {
     try {
         await connectDB();
@@ -38,3 +40,8 @@ async function startServer() {
 }
 startServer();
 module.exports = startServer;
+*/
+
+app.listen(1000, () => {
+    console.log(`Server Is Started on port http://localhost:1000/`);
+})
