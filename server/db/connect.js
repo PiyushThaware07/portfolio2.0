@@ -1,16 +1,19 @@
 require("dotenv").config();
 const mongoose = require("mongoose");
 
-/*
-function connectDB() {
-    const connect = mongoose.connect('mongodb://127.0.0.1:27017/portfolio_offline')
-    console.log("Database is connected");
-    return connect;
-}
-module.exports = connectDB;
-*/
+const dbURL =
+    process.env.HOST_ENV === "production"
+        ? process.env.DATABASE_ONLINE
+        : process.env.DATABASE_OFFLINE;
 
-mongoose.connect('mongodb://127.0.0.1:27017/portfolio_offline');
-console.log("Database is connected");
+mongoose.connect(dbURL);
 
+const dbConnection = mongoose.connection;
 
+dbConnection.on("error", (error) => {
+    console.error("Error connecting to the database:", error);
+});
+
+dbConnection.on("open", () => {
+    console.log("Database is connected:", dbURL);
+});

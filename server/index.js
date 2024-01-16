@@ -26,22 +26,6 @@ app.use("/api", router);
 
 
 // Server Starting Function ========================================================
-/*
-async function startServer() {
-    try {
-        await connectDB();
-        app.listen(1000, () => {
-            console.log(`Server Is Started on port http://localhost:1000/`);
-        })
-    }
-    catch (error) {
-        console.log("Failed To Start Server : ", error);
-    }
-}
-startServer();
-module.exports = startServer;
-*/
-
-app.listen(1000, () => {
-    console.log(`Server Is Started on port http://localhost:1000/`);
+app.listen(process.env.PORT, () => {
+    console.log(`Server Is Started on port http://localhost:${process.env.PORT}/`);
 })

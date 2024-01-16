@@ -1,4 +1,7 @@
 import React, { useState, useEffect } from 'react';
+// HOST
+const backendURL = import.meta.env.VITE_REACT_APP_HOST_ENV == "production" ? import.meta.env.VITE_REACT_APP_BACKEND_ONLINE : import.meta.env.VITE_REACT_APP_BACKEND_OFFLINE
+
 // CSS
 import "./App.css";
 // Components
@@ -34,7 +37,7 @@ export default function App() {
       <Resume />
       {/* <Services/> */}
       {
-        showContactModel && <Contact toggleContactForm={toggleContactForm} />
+        showContactModel && <Contact backendURL={backendURL} toggleContactForm={toggleContactForm} />
       }
       <Footer />
     </div >
