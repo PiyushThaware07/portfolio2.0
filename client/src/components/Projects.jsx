@@ -42,7 +42,7 @@ export default function Projects(props) {
           >
             {
               state.items.map((item, index) => (
-                <div className="card h-full card  flex-1 mx-1 rounded-lg relative">
+                <div className="card h-full card  flex-1 mx-1 rounded-lg relative" key={index}>
                   <div className="h-full border-[2px] border-slate-700 shadow-sm rounded-lg ">
                     <div className="thumbnail h-[160px]">
                       <img className='object-cover h-full w-full rounded-t-md' src='https://images.pexels.com/photos/1544376/pexels-photo-1544376.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2' alt="" />
