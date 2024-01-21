@@ -57,7 +57,9 @@ export default function Projects(props) {
                 <div className="card h-full card  flex-1 mx-1 rounded-lg relative" key={index}>
                   <div className="h-full border-[2px] border-slate-700 shadow-sm rounded-lg ">
                     <div className="thumbnail h-[200px]">
-                      <img className='object-cover h-full w-full rounded-t-md' src={item.image} alt="Loading..." />
+                      <a href={item.url} target='_blank'>
+                        <img className='object-cover h-full w-full rounded-t-md' src={item.image} alt="Loading..." />
+                      </a>
                     </div>
                     <div className=" flex flex-wrap gap-2 justify-end p-2">
                       {/* FRONT_END */}
