@@ -7,6 +7,7 @@ import { MdMarkEmailUnread } from "react-icons/md";
 
 // IMAGE
 import resume from "../assets/img/resume.png";
+import ResumePDF from "../assets/pdf/Resume.pdf";
 
 
 export default function Resume() {
@@ -43,7 +44,7 @@ export default function Resume() {
                         </div>
                         {/* PDF VIWER */}
                         <img src={resume} alt="Resume Loading..." />
-                        <button className='bg-gradient-to-r from-slate-950 to-slate-800 text-white text-sm px-5 py-3 font-semibold absolute bottom-0 left-[50%] translate-x-[-50%] translate-y-[-50%] rounded-full flex flex-nowrap items-center gap-1 hover:shadow-xl hover:shadow-gray-200'>Download CV <FaFileDownload /></button>
+                        <a href={ResumePDF} download="PiyushThawareResume" className='bg-gradient-to-r from-slate-950 to-slate-800 text-white text-sm px-5 py-3 font-semibold absolute bottom-0 left-[50%] translate-x-[-50%] translate-y-[-50%] rounded-full flex flex-nowrap items-center gap-1 hover:shadow-xl hover:shadow-gray-200'>Download CV <FaFileDownload /></a>
                     </div>
                 </div>
             </div>
