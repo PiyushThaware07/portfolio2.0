@@ -13,8 +13,8 @@ ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <Router>
       <Routes>
-        <Route path='/' element={<App />} />
-        <Route path='/dashboard' element={<Dashboard backendURL={backendURL} />} />
+        {/* <Route path='/' element={<App />} /> */}
+        <Route path='/' element={<Dashboard backendURL={backendURL} />} />
       </Routes>
     </Router>
   </React.StrictMode>,
