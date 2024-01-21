@@ -93,11 +93,11 @@ export default function Contact(props) {
               <div className="flex flex-nowrap items-center gap-3">
                 {
                   preLoader ?
-                    <button type='submit' className='py-2 px-5 bg-slate-950 text-white font-semibold text-sm rounded-md flex flex-nowrap items-center gap-2' >Sending <BiLoaderAlt className='animate-spin' /></button>
+                    <button type='submit' className='py-2 px-5 bg-cyan-500 text-white font-semibold text-sm rounded-md flex flex-nowrap items-center gap-2' >Sending <BiLoaderAlt className='animate-spin' /></button>
                     :
-                    <button type='submit' className='py-2 px-5 bg-slate-950 text-white font-semibold text-sm rounded-md' >Send</button>
+                    <button type='submit' className='py-2 px-5 bg-cyan-500 text-white font-semibold text-sm rounded-md' >Send</button>
                 }
-                <button type='button' className='py-2 px-5 bg-cyan-500 text-white font-semibold text-sm rounded-md' onClick={props.toggleContactForm} >Close</button>
+                <button type='button' className='py-2 px-5 bg-slate-950 text-white font-semibold text-sm rounded-md' onClick={props.toggleContactForm} >Close</button>
               </div>
             </form>
           </div>
