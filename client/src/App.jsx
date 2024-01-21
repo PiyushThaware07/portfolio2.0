@@ -33,7 +33,7 @@ export default function App() {
 
 
   return (
-    <div className='main min-h-screen min-w-screen  ' style={{ fontFamily: "'Poppins', sans-serif" }} >
+    <div className='main min-h-screen max-w-7xl w-full mx-auto' style={{ fontFamily: "'Poppins', sans-serif" }} >
       <Navbar toggleContactForm={toggleContactForm} />
       <Header />
       <TechStack />
