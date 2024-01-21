@@ -1,8 +1,9 @@
 import React from 'react';
 // SKILLS
-import { FaHtml5, FaCss3Alt, FaBootstrap, FaReact, FaPython, FaNodeJs, FaGitAlt, FaGithub } from "react-icons/fa";
+import { FaHtml5, FaCss3Alt, FaBootstrap, FaReact, FaPython, FaNodeJs, FaGitAlt, FaGithub,FaWordpress } from "react-icons/fa";
 import { TbBrandJavascript } from "react-icons/tb";
-import { SiTailwindcss, SiDjango, SiFlask, SiExpress, SiMongodb, SiPhp, SiPostman, SiReplit } from "react-icons/si";
+import { SiTailwindcss, SiDjango, SiFlask, SiExpress, SiMongodb, SiPhp, SiPostman, SiReplit,SiSocketdotio  } from "react-icons/si";
+import { BiLogoVisualStudio } from "react-icons/bi";
 
 
 
@@ -29,6 +30,7 @@ export default function TechStack() {
                                 <span><button className='flex flex-nowrap items-center gap-1 bg-purple-600 p-2 text-white rounded-md' ><FaBootstrap className='text-lg' /> <h1 className='text-sm font-semibold'>Bootstrap</h1> </button></span>
                                 <span><button className='flex flex-nowrap items-center gap-1 bg-sky-400 p-2 text-white rounded-md' ><SiTailwindcss className='text-lg' /> <h1 className='text-sm font-semibold'>Tailwind CSS</h1> </button></span>
                                 <span><button className='flex flex-nowrap items-center gap-1 bg-emerald-600 p-2 text-white rounded-md' ><FaReact className='text-lg' /> <h1 className='text-sm font-semibold'>React JS</h1> </button></span>
+                                <span><button className='flex flex-nowrap items-center gap-1 bg-cyan-500 p-2 text-white rounded-md' ><FaWordpress  className='text-lg' /> <h1 className='text-sm font-semibold'>Wordpress</h1> </button></span>
                             </div>
                         </div>
                     </div>
@@ -43,6 +45,7 @@ export default function TechStack() {
                                 <span><button className='flex flex-nowrap items-center gap-1 bg-slate-600 p-2 text-white rounded-md' ><SiFlask className='text-lg' /> <h1 className='text-sm font-semibold'>Flask</h1> </button></span>
                                 <span><button className='flex flex-nowrap items-center gap-1 bg-yellow-400 p-2 text-white rounded-md' ><FaNodeJs className='text-lg' /> <h1 className='text-sm font-semibold'>Node JS</h1> </button></span>
                                 <span><button className='flex flex-nowrap items-center gap-1 bg-gray-400 p-2 text-white rounded-md' ><SiExpress className='text-lg' /> <h1 className='text-sm font-semibold'>Express JS</h1> </button></span>
+                                <span><button className='flex flex-nowrap items-center gap-1 bg-red-500 p-2 text-white rounded-md' ><SiSocketdotio  className='text-lg' /> <h1 className='text-sm font-semibold'>Socket IO</h1> </button></span>
                             </div>
                         </div>
                     </div>
@@ -58,6 +61,7 @@ export default function TechStack() {
                                 <span><button className='flex flex-nowrap items-center gap-1 bg-red-500 p-2 text-white rounded-md' ><FaGitAlt className='text-lg' /> <h1 className='text-sm font-semibold'>Git</h1> </button></span>
                                 <span><button className='flex flex-nowrap items-center gap-1 bg-slate-800 p-2 text-white rounded-md' ><FaGithub className='text-lg' /> <h1 className='text-sm font-semibold'>Github</h1> </button></span>
                                 <span><button className='flex flex-nowrap items-center gap-1 bg-red-500 p-2 text-white rounded-md' ><SiReplit className='text-lg' /> <h1 className='text-sm font-semibold'>Replit</h1> </button></span>
+                                <span><button className='flex flex-nowrap items-center gap-1 bg-blue-500 p-2 text-white rounded-md' ><BiLogoVisualStudio className='text-lg' /> <h1 className='text-sm font-semibold'>Visual Studio</h1> </button></span>
                             </div>
                         </div>
                     </div>

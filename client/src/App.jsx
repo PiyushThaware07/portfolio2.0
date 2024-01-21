@@ -15,6 +15,7 @@ import Experience from "./components/Experience";
 import Resume from "./components/Resume";
 import Contact from "./components/Contact";
 import MessageBox from './components/MessageBox';
+import SocialMedia from "./components/SocialMedia";
 
 
 
@@ -40,13 +41,16 @@ export default function App() {
       <Projects backendURL={backendURL} />
       <Experience backendURL={backendURL} />
       <Resume />
-      {/* <Services/> */}
+      <Services/>
       {
         showContactModel && <Contact backendURL={backendURL} toggleContactForm={toggleContactForm} setShowMessageBox={setShowMessageBox} />
       }
 
       {
         showMessageBox && <MessageBox setShowMessageBox={setShowMessageBox} />
+      }
+      {
+        <SocialMedia/>
       }
       <Footer />
     </div >
