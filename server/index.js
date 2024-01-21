@@ -13,6 +13,8 @@ require("./db/connect");
 // Middlewares --------------------------------------------------------------------
 app.use(cors());
 app.use(express.json());
+// Handle Image Upload ------------------------------------------------------------
+app.use("/uploads", express.static("uploads"));
 
 
 app.get("/", (request, response) => {

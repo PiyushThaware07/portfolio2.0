@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 // ICONS
 import { MdCardTravel } from "react-icons/md";
 import { FaLocationDot } from "react-icons/fa6";
@@ -9,7 +9,7 @@ AOS.init();
 
 
 
-export default function Experience() {
+export default function Experience(props) {
 
     /*
     useEffect(() => {
@@ -30,6 +30,27 @@ export default function Experience() {
     }, [])
     */
 
+    const [experiences, setExperiences] = useState([]);
+    async function handleExperienceReadData() {
+        const request = await fetch(`${props.backendURL}/api/retriveExperience`, {
+            method: "get",
+            headers: {
+                "Content-Type": "application/json"
+            }
+        });
+        const response = await request.json();
+        // console.warn("Response : ", response.data);
+        if (response.success) {
+            setExperiences(response.data);
+        }
+        else {
+            setExperiences([]);
+        }
+    }
+    useEffect(() => {
+        handleExperienceReadData();
+    }, [])
+
 
     return (
         <>
@@ -42,43 +63,43 @@ export default function Experience() {
 
                 <div className="timelineContainer w-full h-[100%] flex flex-nowrap items-center justify-center relative z-2 after:bg-slate-900">
                     <ul className="timeline-items w-[100%] md:w-[80%] mx-auto ps-10 md:ps-0 ">
+                        {
+                            experiences.length !== 0
+                            &&
+                            (
+                                experiences.map((item, index) => (
+                                    <li key={index} className="timeline-item w-[100%]  md:w-[50%]  cursor-pointer relative z-[9] mt-8 md:mt-0 md:pt-8 mb-5" >
+                                        <div className="timeline-card relative w-full h-auto shadow-md bg-slate-100 rounded-lg px-5 py-10  text-slate-800" >
+                                            <h1 className='font-bold capitalize '>@{item.companyName}</h1>
+                                            <h1 className='font-semibold text-[13px] text-slate-600'>{item.jobTitle}</h1>
+                                            <h1 className='font-semibold text-[13px] text-slate-600'><span className='text-slate-800'>Duration : </span>{item.duration} Months</h1>
+                                            <h1 className='font-semibold text-[13px] text-slate-800'>Responsibilities : </h1>
+                                            <ul>
+                                                {
+                                                    item.responsibilities.map((item, index) => (
+                                                        <li key={index} className='font-semibold text-[11px] text-slate-600'>~ {item}</li>
+                                                    ))
+                                                }
+                                            </ul>
+                                            <span className='location bg-white text-slate-900 px-2 py-1 rounded-lg text-sm font-semibold inline-flex items-center absolute bottom-2 right-2'
+                                                style={{ boxShadow: "inset 0 0 4px rgba(0, 0, 0, 0.2)" }}>
+                                                <FaLocationDot className='' />
+                                                <span className='text-[13px] font-semibold'>{item.location}</span>
+                                            </span>
+                                        </div>
+                                        <span className="circle w-32 absolute flex flex-nowrap items-center justify-center gap-2 bg-slate-900 px-3 py-1 rounded-full z-[999]">
+                                            <span className='icon text-white rounded-full '><MdCardTravel /></span>
+                                            <span className='duration text-sm text-white font-semibold text-nowrap' >{item.startDate} - {item.endDate}</span>
+                                        </span>
+                                    </li>
+                                ))
+                            )
+                        }
 
-                        <li className="timeline-item w-[100%]  md:w-[50%]  cursor-pointer relative z-[9] mt-8 md:mt-0 md:pt-8 mb-5" >
-                            <div className="timeline-card relative w-full h-auto shadow-md bg-slate-100 rounded-lg px-5 py-10  text-slate-800" >
-                                <h1 className='font-bold capitalize '>@Bootcoding PVT LTD</h1>
-                                <h1 className='font-semibold text-[13px] text-slate-600'>Software Developer Intern (MERN)</h1>
-                                <h1 className='font-semibold text-[13px] text-slate-600'>6 Months</h1>
-                                <h1 className='font-semibold text-[13px] text-slate-600'>~ Currently working on codelab</h1>
-                                <span className='location bg-white text-slate-900 px-2 py-1 rounded-lg text-sm font-semibold inline-flex items-center absolute bottom-2 right-2'
-                                    style={{ boxShadow: "inset 0 0 4px rgba(0, 0, 0, 0.2)" }}>
-                                    <FaLocationDot className='' />
-                                    <span className='text-[13px] font-semibold'>Nagpur</span>
-                                </span>
-                            </div>
-                            <span className="circle w-32 absolute flex flex-nowrap items-center justify-center gap-2 bg-slate-900 px-3 py-1 rounded-full z-[999]">
-                                <span className='icon text-white rounded-full '><MdCardTravel /></span>
-                                <span className='duration text-sm text-white font-semibold' >2020 - 2021</span>
-                            </span>
-                        </li>
-                        <li className="timeline-item w-[100%]  md:w-[50%]  cursor-pointer relative z-[9] mt-8 md:mt-0 md:pt-8" >
-                            <div className="timeline-card relative w-full h-auto shadow-md bg-slate-100 rounded-lg px-5 py-10  text-slate-800" >
-                                <h1 className='font-bold capitalize '>@Bootcoding PVT LTD</h1>
-                                <h1 className='font-semibold text-[13px] text-slate-600'>Software Developer Intern (MERN)</h1>
-                                <h1 className='font-semibold text-[13px] text-slate-600'>6 Months</h1>
-                                <h1 className='font-semibold text-[13px] text-slate-600'>~ Currently working on codelab</h1>
-                                <span className='location bg-white text-slate-900 px-2 py-1 rounded-lg text-sm font-semibold inline-flex items-center absolute bottom-2 right-2'
-                                    style={{ boxShadow: "inset 0 0 4px rgba(0, 0, 0, 0.2)" }}>
-                                    <FaLocationDot className='' />
-                                    <span className='text-[13px] font-semibold'>Nagpur</span>
-                                </span>
-                            </div>
-                            <span className="circle w-32 absolute flex flex-nowrap items-center justify-center gap-2 bg-slate-900 px-3 py-1 rounded-full z-[999]">
-                                <span className='icon text-white rounded-full '><MdCardTravel /></span>
-                                <span className='duration text-sm text-white font-semibold' >2020 - 2021</span>
-                            </span>
-                        </li>
-                        
-                      
+
+
+
+
 
 
 

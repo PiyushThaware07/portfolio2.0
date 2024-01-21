@@ -37,8 +37,8 @@ export default function App() {
       <Navbar toggleContactForm={toggleContactForm} />
       <Header />
       <TechStack />
-      <Projects />
-      <Experience />
+      <Projects backendURL={backendURL} />
+      <Experience backendURL={backendURL} />
       <Resume />
       {/* <Services/> */}
       {

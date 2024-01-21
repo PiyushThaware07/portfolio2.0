@@ -20,7 +20,7 @@ export default function Contact(props) {
     try {
       // * set preloader -------------------------------------------------------------
       setPreLoader(true);
-      const request = await fetch(`${props.backendURL}/contact`, {
+      const request = await fetch(`${props.backendURL}/api/contact`, {
         method: "post",
         body: JSON.stringify(data),
         headers: {
