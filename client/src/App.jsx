@@ -16,10 +16,20 @@ import Resume from "./components/Resume";
 import Contact from "./components/Contact";
 import MessageBox from './components/MessageBox';
 import SocialMedia from "./components/SocialMedia";
-
+import PreLoader from "./components/PreLoader";
 
 
 export default function App() {
+  // Handle Website Loader ====================================================
+  const [preLoader, setPreLoader] = useState(true);
+  useEffect(() => {
+    setTimeout(() => {
+      setPreLoader(false);
+    }, 2000);
+  }, [])
+
+
+
   // Handle Contact Form ====================================================
   const [showContactModel, setshowContactModel] = useState(false);
   function toggleContactForm() {
@@ -34,25 +44,27 @@ export default function App() {
 
 
   return (
-    <div className='main min-h-screen max-w-7xl w-full mx-auto' style={{ fontFamily: "'Poppins', sans-serif" }} >
-      <Navbar toggleContactForm={toggleContactForm} />
-      <Header />
-      <TechStack />
-      <Projects backendURL={backendURL} />
-      <Experience backendURL={backendURL} />
-      <Resume />
-      <Services/>
+    <>
       {
-        showContactModel && <Contact backendURL={backendURL} toggleContactForm={toggleContactForm} setShowMessageBox={setShowMessageBox} />
+        preLoader
+          ?
+          <PreLoader />
+          :
+          <div className='main min-h-screen max-w-7xl w-full mx-auto' style={{ fontFamily: "'Poppins', sans-serif" }} >
+            <Navbar toggleContactForm={toggleContactForm} />
+            <Header />
+            <TechStack />
+            <Projects backendURL={backendURL} />
+            <Experience backendURL={backendURL} />
+            <Resume />
+            <Services />
+            {showContactModel && <Contact backendURL={backendURL} toggleContactForm={toggleContactForm} setShowMessageBox={setShowMessageBox} />}
+            {showMessageBox && <MessageBox setShowMessageBox={setShowMessageBox} />}
+            {<SocialMedia />}
+            <Footer />
+          </div >
       }
+    </>
 
-      {
-        showMessageBox && <MessageBox setShowMessageBox={setShowMessageBox} />
-      }
-      {
-        <SocialMedia/>
-      }
-      <Footer />
-    </div >
   )
 }
