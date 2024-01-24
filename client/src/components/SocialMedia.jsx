@@ -36,7 +36,7 @@ const social_links = [
 export default function SocialMedia() {
   const [toggleSocial, setToggleSocial] = useState(false);
   return (
-    <div className='fixed bottom-5 sm:bottom-10 right-5 sm:right-10'>
+    <div className='fixed bottom-5 sm:bottom-10 right-5 sm:right-10 z-10'>
 
 
       {
