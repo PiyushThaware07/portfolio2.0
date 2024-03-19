@@ -24,7 +24,7 @@ export default function Projects(props) {
   const state = {
     items: [
       { id: 1, title: 'ShopNow - Ecommerce', image: bg1, url: "https://shopnowstore.netlify.app/" },
-      { id: 2, title: 'FreeTube - Youtube clone', image: bg2, url: "https://shopnowstore.netlify.app/" },
+      { id: 2, title: 'FreeTube - Youtube clone', image: bg2, url: "https://freetubeapp.netlify.app/" },
       { id: 3, title: 'ChatBot - Telegram', image: bg3, url: "https://skycastweather.pythonanywhere.com/" },
       { id: 4, title: 'ChatNow - Chatting App', image: bg4, url: "https://chatnow.pythonanywhere.com" },
       { id: 5, title: 'StoryTeller - Blogging App', image: bg5, url: "https://storyteller.pythonanywhere.com" },

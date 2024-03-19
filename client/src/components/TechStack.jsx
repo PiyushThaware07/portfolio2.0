@@ -30,7 +30,7 @@ export default function TechStack() {
                                 <span><button className='flex flex-nowrap items-center gap-1 bg-purple-600 p-2 text-white rounded-md' ><FaBootstrap className='text-lg' /> <h1 className='text-sm font-semibold'>Bootstrap</h1> </button></span>
                                 <span><button className='flex flex-nowrap items-center gap-1 bg-sky-400 p-2 text-white rounded-md' ><SiTailwindcss className='text-lg' /> <h1 className='text-sm font-semibold'>Tailwind CSS</h1> </button></span>
                                 <span><button className='flex flex-nowrap items-center gap-1 bg-emerald-600 p-2 text-white rounded-md' ><FaReact className='text-lg' /> <h1 className='text-sm font-semibold'>React JS</h1> </button></span>
-                                <span><button className='flex flex-nowrap items-center gap-1 bg-cyan-500 p-2 text-white rounded-md' ><FaWordpress  className='text-lg' /> <h1 className='text-sm font-semibold'>Wordpress</h1> </button></span>
+                                {/* <span><button className='flex flex-nowrap items-center gap-1 bg-cyan-500 p-2 text-white rounded-md' ><FaWordpress  className='text-lg' /> <h1 className='text-sm font-semibold'>Wordpress</h1> </button></span> */}
                             </div>
                         </div>
                     </div>
@@ -45,7 +45,7 @@ export default function TechStack() {
                                 <span><button className='flex flex-nowrap items-center gap-1 bg-slate-600 p-2 text-white rounded-md' ><SiFlask className='text-lg' /> <h1 className='text-sm font-semibold'>Flask</h1> </button></span>
                                 <span><button className='flex flex-nowrap items-center gap-1 bg-yellow-400 p-2 text-white rounded-md' ><FaNodeJs className='text-lg' /> <h1 className='text-sm font-semibold'>Node JS</h1> </button></span>
                                 <span><button className='flex flex-nowrap items-center gap-1 bg-gray-400 p-2 text-white rounded-md' ><SiExpress className='text-lg' /> <h1 className='text-sm font-semibold'>Express JS</h1> </button></span>
-                                <span><button className='flex flex-nowrap items-center gap-1 bg-red-500 p-2 text-white rounded-md' ><SiSocketdotio  className='text-lg' /> <h1 className='text-sm font-semibold'>Socket IO</h1> </button></span>
+                                {/* <span><button className='flex flex-nowrap items-center gap-1 bg-red-500 p-2 text-white rounded-md' ><SiSocketdotio  className='text-lg' /> <h1 className='text-sm font-semibold'>Socket IO</h1> </button></span> */}
                             </div>
                         </div>
                     </div>
@@ -56,7 +56,7 @@ export default function TechStack() {
                             </div>
                             <div className="mb-3 md:mb-5 flex flex-wrap gap-2">
                                 <span><button className='flex flex-nowrap items-center gap-1 bg-emerald-600 p-2 text-white rounded-md' ><SiMongodb className='text-lg' /> <h1 className='text-sm font-semibold'>MongoDB</h1> </button></span>
-                                <span><button className='flex flex-nowrap items-center gap-1 bg-purple-600 p-2 text-white rounded-md' ><SiPhp className='text-lg' /> <h1 className='text-sm font-semibold'>php</h1> </button></span>
+                                {/* <span><button className='flex flex-nowrap items-center gap-1 bg-purple-600 p-2 text-white rounded-md' ><SiPhp className='text-lg' /> <h1 className='text-sm font-semibold'>php</h1> </button></span> */}
                                 <span><button className='flex flex-nowrap items-center gap-1 bg-orange-500 p-2 text-white rounded-md' ><SiPostman className='text-lg' /> <h1 className='text-sm font-semibold'>Postman</h1> </button></span>
                                 <span><button className='flex flex-nowrap items-center gap-1 bg-red-500 p-2 text-white rounded-md' ><FaGitAlt className='text-lg' /> <h1 className='text-sm font-semibold'>Git</h1> </button></span>
                                 <span><button className='flex flex-nowrap items-center gap-1 bg-slate-800 p-2 text-white rounded-md' ><FaGithub className='text-lg' /> <h1 className='text-sm font-semibold'>Github</h1> </button></span>
